@@ -7,14 +7,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sorry", "Sorry\Sorry.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestSorry", "TestSorry\TestSorry.csproj", "{BBEC1CB5-245B-4A79-A9FB-EE1E6850F8CF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyNetwork", "EasyNetwork2\EasyNetwork\EasyNetwork.csproj", "{B334B401-B417-4B74-862E-1FD8709FFA9F}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyNetworkTests", "EasyNetwork2\EasyNetworkTests\EasyNetworkTests.csproj", "{3FDC1B2A-FEF6-4CDA-AD52-D30DA7EAC253}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F517A5AF-E0EA-43FD-9B08-8945884C3FBD}"
 	ProjectSection(SolutionItems) = preProject
 		EasyNetwork2\EasyNetwork.sln = EasyNetwork2\EasyNetwork.sln
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyNetwork", "EasyNetwork\EasyNetwork.csproj", "{B334B401-B417-4B74-862E-1FD8709FFA9F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyNetworkTests", "EasyNetworkTests\EasyNetworkTests.csproj", "{3FDC1B2A-FEF6-4CDA-AD52-D30DA7EAC253}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
