@@ -19,7 +19,7 @@ namespace Sorry
 
         private void button1_Click(object sender, EventArgs e)
         {
-            output.AppendText("Hello World");
+            output.AppendText("OOoooo.... I like when you touch me");
         }
     }
 }
