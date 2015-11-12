@@ -9,4 +9,5 @@ public class Card
         cardNumber = newNumber;
         special = newSpecial;
 	}
+    //How do we tie the images to this class?
 }
