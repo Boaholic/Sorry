@@ -8,7 +8,7 @@ namespace Sorry
 {
    public class Deck 
     {
-        private Card[] deck { get; }  //array of all cards
+        private Card[] deck { get; set; }  //array of all cards
         private const int NUM_OF_CARDS = 45;  //number of cards in the game
         int positionInArray;
 
