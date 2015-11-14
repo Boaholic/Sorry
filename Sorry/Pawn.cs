@@ -25,5 +25,11 @@ namespace Sorry
             boardLocationY = y;
 
         }
+
+        //Returns a KeyValuePair of the x,y coordinate of the pawn.
+        public KeyValuePair<int, int> getBoardLocation()
+        {
+            return new KeyValuePair<int, int>(boardLocationX, boardLocationY);
+        }
     }
 }
