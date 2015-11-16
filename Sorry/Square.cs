@@ -18,6 +18,7 @@ namespace Sorry
         }
         public Pawn SetOccupied(Pawn newPawn)
         {
+            occupiedBy = newPawn;
             return occupiedBy; 
         }
     }
