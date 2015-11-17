@@ -172,8 +172,8 @@ namespace Sorry
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void DeckButtonHit(object sender, EventArgs e) {
-            Card toDisplay = new Card();
-            toDisplay.cardVal = Card.VALUE.One;
+            Deck deck = new Deck();
+            Card toDisplay = deck.DrawCard();
             DisplayCard(toDisplay);
         }
 
