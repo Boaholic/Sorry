@@ -46,20 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Board.cs" />
     <Compile Include="Card.cs" />
     <Compile Include="Deck.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="Display.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Game.cs" />
     <Compile Include="Pawn.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
+    <Compile Include="Square.cs" />
+    <Compile Include="SquareType.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -68,6 +66,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -81,6 +80,54 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\GameBoard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Deck.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CardOne.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\card01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\card02.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\card03.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\card04.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\card07.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\card08.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\card10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\card11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\card12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\cardSorry.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\card05.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\logo01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\logo02.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

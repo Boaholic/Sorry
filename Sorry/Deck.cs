@@ -8,14 +8,14 @@ namespace Sorry
 {
    public class Deck 
     {
-        private Card[] deck { get; set; }  //array of all cards
+        private List<Card> deck { get; set; }  //array of all cards
         private const int NUM_OF_CARDS = 45;  //number of cards in the game
         int positionInArray;
 
         public Deck()
         {
-            deck = new Card[NUM_OF_CARDS]; //Initialize array to necessary size of Cards
-
+            deck = new List<Card>(); //Initialize array to necessary size of Cards
+            CreateDeck();
         }
 
         public void Shuffle()//shuffles the deck of cards
@@ -37,20 +37,27 @@ namespace Sorry
         }
         
         //This actually need to return type Card
-        public void DrawCard()
+        public Card DrawCard()
         {
-
+            Card toReturn=deck[positionInArray];
+            positionInArray = (positionInArray + 1) % NUM_OF_CARDS;
+            if (positionInArray == 0)
+                Shuffle();
+            return toReturn;
         }
         
         public void CreateDeck()//Create deck of 45 cards
         {
             int i = 0;
-            foreach(Card.VALUE v in Enum.GetValues(typeof(Card.VALUE)))
+            for (int j = 0; j < 4; j++)
             {
-                deck[i] = new Card{ cardVal = v };
-                i++;
+                foreach (Card.VALUE v in Enum.GetValues(typeof(Card.VALUE)))
+                {
+                    deck.Add(new Card { cardVal = v });
+                    i++;
+                }
             }
-
+            deck.Add(new Card { cardVal = Card.VALUE.One });
             Shuffle();
         }
     }
