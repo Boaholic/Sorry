@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 
 namespace Sorry
 {
@@ -11,7 +12,7 @@ namespace Sorry
         // Shows if the square belongs to a player i.e "Home Spaces"
         private int ownerPlayer;
         // Lights up the square if it is a valid move
-        private color highlighted;
+        private Color highlighted;
         public Square()
         {
 
