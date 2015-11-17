@@ -43,16 +43,18 @@ namespace Sorry
         private void InitializeComponent()
         {
             this.SuspendLayout();
-            int boardTop=200, boardRight=50;
+            int boardRight = 200, boardTop = 50;
+            baseBoard = new Board();
+
             BoardPicture = new Label();
 
-            BoardPicture.Location= new System.Drawing.Point(boardTop, boardRight);
+            BoardPicture.Location = new System.Drawing.Point(boardRight, boardTop);
             BoardPicture.Size = new System.Drawing.Size(200, 200);
             Image boardPic = Resources.GameBoard;
-            BoardPicture.Size = new Size(boardPic.Width, boardPic.Height); 
+            BoardPicture.Size = new Size(boardPic.Width, boardPic.Height);
             BoardPicture.Image = boardPic;
 
-            CardPicture = new Label();
+            CardPicture = new Button();
 
             CardPicture.Location = new System.Drawing.Point(50, 50);
             CardPicture.Size = new System.Drawing.Size(200, 200);
@@ -75,27 +77,67 @@ namespace Sorry
             // 
             // Board
             // 
-            BoardButtons = new List<Button>();
-            int buttonNum = 16;
-            for (int i = 0; i < buttonNum; i++)
+            BoardButtons = new List<List<Button>>();
+            int buttonSize = 31;
+            for (int i = 0; i < baseBoard.board.Length; i++)
             {
-                BoardButtons.Add(new System.Windows.Forms.Button());
+                int buttonT = boardTop, buttonR = boardRight,jrfactor=0,jtfactor=0;
+                BoardButtons.Add(new List<Button>());
+                BoardButtons[i].Add(new System.Windows.Forms.Button());
 
-                BoardButtons[i].Location = new System.Drawing.Point(boardTop + i * 32, boardRight);
-                BoardButtons[i].Name = "Square" + i;
-                BoardButtons[i].Size = new System.Drawing.Size(32 , 32);
-                BoardButtons[i].TabIndex = 0;
+                if (baseBoard.board.Length / 4 > i) {
+                    buttonR=boardRight + i * buttonSize;
+                    buttonT = boardTop;
+                    jtfactor = 1;
+                }
+                else if (baseBoard.board.Length / 2 > i) {
+                    buttonR = boardRight + (baseBoard.board.Length / 4 * buttonSize);
+                    buttonT = boardTop + i % 15 * buttonSize;
+                    jrfactor = -1;
+                }
+                else if (baseBoard.board.Length * 3 / 4 > i) {
+                    buttonR=boardRight + ((baseBoard.board.Length / 4) - i % 15) * buttonSize;
+                    buttonT=boardTop + baseBoard.board.Length / 4 * buttonSize;
+                    jtfactor = -1;
+                }
+                else {
+                    buttonT = boardTop + ((baseBoard.board.Length / 4) - i % 15) * buttonSize;
+                    buttonR = boardRight;
+                    jrfactor = 1;
+                }
+                BoardButtons[i][0].Location = new System.Drawing.Point(buttonR, buttonT); 
+                BoardButtons[i][0].Name = "Square" + i;
+                BoardButtons[i][0].Size = new System.Drawing.Size(buttonSize, buttonSize);
+                BoardButtons[i][0].TabIndex = 0;
                 //Board[i].Text = "Square" + i;
-                BoardButtons[i].UseVisualStyleBackColor = true;
-                this.Controls.Add(BoardButtons[i]);
+                BoardButtons[i][0].UseVisualStyleBackColor = true;
+                this.Controls.Add(BoardButtons[i][0]);
+
+                if (baseBoard.board[i].Length > 1) {
+                    for (int j = 1; j < baseBoard.board[i].Length; j++) {
+                        BoardButtons[i].Add(new System.Windows.Forms.Button());
+                        BoardButtons[i][j].Location = new System.Drawing.Point(buttonR+jrfactor*j*32, buttonT+ jtfactor * j * buttonSize);
+                        BoardButtons[i][j].Name = "Square" + i;
+                        BoardButtons[i][j].Size = new System.Drawing.Size(buttonSize, buttonSize);
+                        BoardButtons[i][j].TabIndex = 0;
+                        //Board[i].Text = "Square" + i;
+                        BoardButtons[i][j].UseVisualStyleBackColor = true;
+                        this.Controls.Add(BoardButtons[i][j]);
+
+                    }
+
+                }
+
             }
+
             BoardPicture.SendToBack();
 
         }
 
-        private List<System.Windows.Forms.Button> BoardButtons;
+        private List<List<System.Windows.Forms.Button>> BoardButtons;
+        private Board baseBoard;
         private Label BoardPicture;
-        private Label CardPicture;
+        private Button CardPicture;
 
 
     }
