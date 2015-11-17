@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Sorry
 {
-    class Pawn
+    public class Pawn
     {
         private int boardLocationX { get; set; }
 
