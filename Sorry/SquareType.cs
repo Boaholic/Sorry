@@ -8,7 +8,7 @@ namespace Sorry
 {
     public enum SquareType
     {
-
+        Normal,HomeRun,Home,Start,SliderStart,SliderEnd,SliderMiddle
 
     }
 }
