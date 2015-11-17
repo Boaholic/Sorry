@@ -17,9 +17,40 @@ namespace Sorry
     {
         public Display()
         {
+            baseBoard = new Board();
+            InitializeCardImageMap();
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Renders the Current Game to the Board
+        /// </summary>
+        public void Render() {
+            
+        }
+        /// <summary>
+        /// Renders the card given on the UI
+        /// </summary>
+        /// <param name="toDisplay">The card to display</param>
+        public void DisplayCard(Card toDisplay) {
+            CardPicture.Image = CardImages[toDisplay.cardVal];
+
+        }
+        private void InitializeCardImageMap() {
+            CardImages = new Dictionary<Card.VALUE, Image>();
+            CardImages.Add(Card.VALUE.One, Resources.card01);
+            CardImages.Add(Card.VALUE.TWO, Resources.card02);
+            CardImages.Add(Card.VALUE.THREE, Resources.card03);
+            CardImages.Add(Card.VALUE.FOUR, Resources.card04);
+            CardImages.Add(Card.VALUE.FIVE, Resources.card05);
+            CardImages.Add(Card.VALUE.SEVEN, Resources.card07);
+            CardImages.Add(Card.VALUE.EIGHT, Resources.card08);
+            CardImages.Add(Card.VALUE.TEN, Resources.card10);
+            CardImages.Add(Card.VALUE.ELEVEN, Resources.card11);
+            CardImages.Add(Card.VALUE.TWELVE, Resources.card12);
+            CardImages.Add(Card.VALUE.SORRY, Resources.cardSorry);
+
+        }
 
         /// <summary>
         /// Required designer variable.
@@ -47,23 +78,23 @@ namespace Sorry
         {
             this.SuspendLayout();
             int boardRight = 200, boardTop = 50;
-            baseBoard = new Board();
 
             BoardPicture = new Label();
-
             BoardPicture.Location = new System.Drawing.Point(boardRight, boardTop);
             BoardPicture.Size = new System.Drawing.Size(200, 200);
             Image boardPic = Resources.GameBoard;
             BoardPicture.Size = new Size(boardPic.Width, boardPic.Height);
             BoardPicture.Image = boardPic;
-
-            CardPicture = new Button();
-
-            CardPicture.Location = new System.Drawing.Point(50, 50);
-            CardPicture.Size = new System.Drawing.Size(200, 200);
+            //
+            // DeckButton
+            //
+            DeckButton = new Button();
+            DeckButton.Location = new System.Drawing.Point(50, 50);
+            DeckButton.Size = new System.Drawing.Size(200, 200);
             Image deckPic = Resources.Deck;
-            CardPicture.Size = new Size(deckPic.Width, deckPic.Height);
-            CardPicture.Image = deckPic;
+            DeckButton.Size = new Size(deckPic.Width, deckPic.Height);
+            DeckButton.Image = deckPic;
+            DeckButton.Click += new EventHandler(DeckButtonHit);
             // 
             // GameDisplay
             // 
@@ -75,6 +106,15 @@ namespace Sorry
             this.Text = "Sorry";
             this.ResumeLayout(false);
             this.Controls.Add(BoardPicture);
+            this.Controls.Add(DeckButton);
+            //
+            // CardPicture
+            // 
+            CardPicture = new Label();
+            CardPicture.Location = new System.Drawing.Point(50, 300);
+            CardPicture.Size = new System.Drawing.Size(200, 200);
+            CardPicture.Size = new Size(deckPic.Width, deckPic.Height);
+            CardPicture.Image = deckPic;
             this.Controls.Add(CardPicture);
 
             // 
@@ -126,10 +166,29 @@ namespace Sorry
 
         }
 
+        /// <summary>
+        /// Function to test if DisplayCard Works, will not be in final product
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void DeckButtonHit(object sender, EventArgs e) {
+            Card toDisplay = new Card();
+            toDisplay.cardVal = Card.VALUE.One;
+            DisplayCard(toDisplay);
+        }
+
+
         private List<List<System.Windows.Forms.Button>> BoardButtons;
         private Board baseBoard;
         private Label BoardPicture;
-        private Button CardPicture;
+        private Label CardPicture;
+        private Button DeckButton;
+        private Game parentGame;
+        private Image BoardImage;
+        private List<Image> pawnImages;
+        private Dictionary<Card.VALUE,Image> CardImages;
+
+
 
 
     }

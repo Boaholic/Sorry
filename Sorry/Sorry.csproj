@@ -87,6 +87,48 @@
   <ItemGroup>
     <None Include="Assets\Deck.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CardOne.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\card01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\card02.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\card03.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\card04.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\card07.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\card08.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\card10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\card11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\card12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\cardSorry.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\card05.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\logo01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\logo02.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
