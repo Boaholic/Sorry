@@ -57,10 +57,16 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
 <<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
     <Compile Include="SquareButton.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+=======
+    <Compile Include="Square.cs" />
+    <Compile Include="SquareType.cs" />
+>>>>>>> upstream/master
 =======
     <Compile Include="Square.cs" />
     <Compile Include="SquareType.cs" />
