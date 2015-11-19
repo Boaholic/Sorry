@@ -130,7 +130,7 @@ namespace Sorry
 
                     int buttonT = boardTop, buttonR = boardRight,jrfactor=0,jtfactor=0;
                     if (baseBoard.board.Length / 4 > i) {   //top line, Red
-                        buttonR=boardRight + i * buttonSize + 0.125;
+                        buttonR=boardRight + i * buttonSize;
                         buttonT = boardTop;
                         jtfactor = 1;
                     }

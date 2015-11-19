@@ -3,13 +3,24 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Sorry
 {
     //Rules and game functionality
-    abstract class Game
+    class Game
     {
-        public void GameBegin() { }
+        public void GameBegin() {
+            //Load Start menu
+            //Application.Run(Something_neat);
+            //get user settings & set variables
+            //start game
+            Application.Run(new Display());
+            //game loop
+                //take move
+                //check rules
+                //check for end came condition
+        }
         public void PauseGame() { }
         public void SaveGame() { }
         public void QuitGame() { }
@@ -17,7 +28,7 @@ namespace Sorry
         
         public void SquareButtonPressed() { }
         public void CardButtonPressed() { }
-        protected abstract void ChangeTurn(int playerId);
+        protected void ChangeTurn(int playerId) { }
 
         protected Board board;
         protected Deck deck;
@@ -27,6 +38,8 @@ namespace Sorry
         protected string theme;
         protected Square prevSquarePressed;
         protected Card prevCard;
+
+
 
     }
 }
