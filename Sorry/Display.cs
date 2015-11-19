@@ -129,22 +129,22 @@ namespace Sorry
                 {
 
                     int buttonT = boardTop, buttonR = boardRight,jrfactor=0,jtfactor=0;
-                    if (baseBoard.board.Length / 4 > i) {
-                        buttonR=boardRight + i * buttonSize;
+                    if (baseBoard.board.Length / 4 > i) {   //top line, Red
+                        buttonR=boardRight + i * buttonSize + 0.125;
                         buttonT = boardTop;
                         jtfactor = 1;
                     }
-                    else if (baseBoard.board.Length / 2 > i) {
+                    else if (baseBoard.board.Length / 2 > i) { //right line, blue
                         buttonR = boardRight + (baseBoard.board.Length / 4 * buttonSize);
                         buttonT = boardTop + i % 15 * buttonSize;
                         jrfactor = -1;
                     }
-                    else if (baseBoard.board.Length * 3 / 4 > i) {
+                    else if (baseBoard.board.Length * 3 / 4 > i) { //bottom line, yellow
                         buttonR=boardRight + ((baseBoard.board.Length / 4) - i % 15) * buttonSize;
                         buttonT=boardTop + baseBoard.board.Length / 4 * buttonSize;
                         jtfactor = -1;
                     }
-                    else {
+                    else {  //left line, green
                         buttonT = boardTop + ((baseBoard.board.Length / 4) - i % 15) * buttonSize;
                         buttonR = boardRight;
                         jrfactor = 1;
