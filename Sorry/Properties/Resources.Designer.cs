@@ -63,6 +63,16 @@ namespace Sorry.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap blueTexture {
+            get {
+                object obj = ResourceManager.GetObject("blueTexture", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap card01 {
             get {
                 object obj = ResourceManager.GetObject("card01", resourceCulture);
@@ -186,6 +196,16 @@ namespace Sorry.Properties {
         internal static System.Drawing.Bitmap GameBoard {
             get {
                 object obj = ResourceManager.GetObject("GameBoard", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap GreenTexture {
+            get {
+                object obj = ResourceManager.GetObject("GreenTexture", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
