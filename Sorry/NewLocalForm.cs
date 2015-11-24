@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Sorry;
 
 namespace Sorry
 {
@@ -36,7 +37,8 @@ namespace Sorry
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
-            Application.Run(new StartMenu());
+            var gameWindow = new Display();
+            gameWindow.Show();
         }
     }
 }
