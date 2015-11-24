@@ -37,8 +37,10 @@ namespace Sorry
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
+
             var gameWindow = new Display();
             gameWindow.Show();
+           
         }
     }
 }
