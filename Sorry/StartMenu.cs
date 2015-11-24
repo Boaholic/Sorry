@@ -16,10 +16,14 @@ namespace Sorry
         {
             InitializeComponent();
         }
-
+        /// <summary>
+        /// launches the local game menu and hides the application.  
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
-            
+            this.Hide();
             NewLocalForm form = new NewLocalForm();
             form.Show();
             

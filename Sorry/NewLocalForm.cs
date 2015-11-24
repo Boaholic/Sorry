@@ -33,13 +33,18 @@ namespace Sorry
             }
             
         }
-
+        /// <summary>
+        /// This launches the game
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Close();
 
+            this.Close();
             var gameWindow = new Display();
             gameWindow.Show();
+            
            
         }
     }
