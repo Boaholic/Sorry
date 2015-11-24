@@ -79,7 +79,7 @@ namespace Sorry
             this.SuspendLayout();
             int boardRight = 200, boardTop = 50;
 
-            BoardPicture = new Label();
+            BoardPicture = new PictureBox();
             BoardPicture.Location = new System.Drawing.Point(boardRight, boardTop);
             BoardPicture.Size = new System.Drawing.Size(200, 200);
             Image boardPic = Resources.GameBoard;
@@ -120,43 +120,45 @@ namespace Sorry
             // 
             // Board
             // 
-            BoardButtons = new List<List<Button>>();
+            BoardButtons = new List<List<SquareButton>>();
             int buttonSize = 31;
             for (int i = 0; i < baseBoard.board.Length; i++)
             {
-                BoardButtons.Add(new List<Button>());
+                BoardButtons.Add(new List<SquareButton>());
                 for (int j = 0; j < baseBoard.board[i].Length; j++)
                 {
 
                     int buttonT = boardTop, buttonR = boardRight,jrfactor=0,jtfactor=0;
-                    if (baseBoard.board.Length / 4 > i) {
+                    if (baseBoard.board.Length / 4 > i) {   //top line, Red
                         buttonR=boardRight + i * buttonSize;
                         buttonT = boardTop;
                         jtfactor = 1;
                     }
-                    else if (baseBoard.board.Length / 2 > i) {
+                    else if (baseBoard.board.Length / 2 > i) { //right line, blue
                         buttonR = boardRight + (baseBoard.board.Length / 4 * buttonSize);
                         buttonT = boardTop + i % 15 * buttonSize;
                         jrfactor = -1;
                     }
-                    else if (baseBoard.board.Length * 3 / 4 > i) {
+                    else if (baseBoard.board.Length * 3 / 4 > i) { //bottom line, yellow
                         buttonR=boardRight + ((baseBoard.board.Length / 4) - i % 15) * buttonSize;
                         buttonT=boardTop + baseBoard.board.Length / 4 * buttonSize;
                         jtfactor = -1;
                     }
-                    else {
+                    else {  //left line, green
                         buttonT = boardTop + ((baseBoard.board.Length / 4) - i % 15) * buttonSize;
                         buttonR = boardRight;
                         jrfactor = 1;
                     }
-                    BoardButtons[i].Add(new System.Windows.Forms.Button());
-                    BoardButtons[i][j].Location = new System.Drawing.Point(buttonR+jrfactor*j*32, buttonT+ jtfactor * j * buttonSize);
+                    BoardButtons[i].Add(new SquareButton());
+                    BoardButtons[i][j].Location = new System.Drawing.Point(buttonR+jrfactor*j*32-196, buttonT+ jtfactor * j * buttonSize-45);
                     BoardButtons[i][j].Name = "Square" + i;
                     BoardButtons[i][j].Size = new System.Drawing.Size(buttonSize, buttonSize);
                     BoardButtons[i][j].TabIndex = 0;
                     //Board[i].Text = "Square" + i;
                     BoardButtons[i][j].UseVisualStyleBackColor = true;
                     this.Controls.Add(BoardButtons[i][j]);
+                    BoardButtons[i][j].Parent = BoardPicture;
+                    BoardButtons[i][j].BackColor = Color.Transparent;
 
                 }
 
@@ -178,9 +180,9 @@ namespace Sorry
         }
 
 
-        private List<List<System.Windows.Forms.Button>> BoardButtons;
+        private List<List<SquareButton>> BoardButtons;
         private Board baseBoard;
-        private Label BoardPicture;
+        private PictureBox BoardPicture;
         private Label CardPicture;
         private Button DeckButton;
         private Game parentGame;
