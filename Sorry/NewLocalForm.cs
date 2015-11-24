@@ -36,7 +36,8 @@ namespace Sorry
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
-            Application.Run(new StartMenu());
+            var gameWindow=new Display();
+            gameWindow.Show();
         }
     }
 }
