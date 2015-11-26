@@ -178,7 +178,19 @@ namespace Sorry
             Card toDisplay = deck.DrawCard();
             DisplayCard(toDisplay);
         }
-
+        /// <summary>
+        /// Overrides the X to close ALL forms including the hidden main application.
+        /// </summary>
+        /// <param name="e"></param>
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            Form[] forms = Application.OpenForms.Cast<Form>().ToArray();
+            foreach (Form thisForm in forms)
+            {
+                thisForm.Close();
+            }
+            e.Cancel = true;
+        }
 
         private List<List<SquareButton>> BoardButtons;
         private Board baseBoard;
