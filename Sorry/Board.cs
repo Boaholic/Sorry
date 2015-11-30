@@ -8,7 +8,7 @@ namespace Sorry
         public SquareType[][] board;
         // Holds the pawn data
         public Pawn[][] pawn;
-
+        //testing comment
 
         public Board()
         {

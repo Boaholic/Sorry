@@ -16,25 +16,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyNetwork", "EasyNetwork\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyNetworkTests", "EasyNetworkTests\EasyNetworkTests.csproj", "{3FDC1B2A-FEF6-4CDA-AD52-D30DA7EAC253}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Assets", "Assets", "{997C726C-30C4-4C8A-92D1-9D6069313122}"
-	ProjectSection(SolutionItems) = preProject
-		\\Mac\Home\Desktop\sorry_assets\card01.png = \\Mac\Home\Desktop\sorry_assets\card01.png
-		\\Mac\Home\Desktop\sorry_assets\card02.png = \\Mac\Home\Desktop\sorry_assets\card02.png
-		\\Mac\Home\Desktop\sorry_assets\card03.png = \\Mac\Home\Desktop\sorry_assets\card03.png
-		\\Mac\Home\Desktop\sorry_assets\card04.png = \\Mac\Home\Desktop\sorry_assets\card04.png
-		\\Mac\Home\Desktop\sorry_assets\card07.png = \\Mac\Home\Desktop\sorry_assets\card07.png
-		\\Mac\Home\Desktop\sorry_assets\card08.png = \\Mac\Home\Desktop\sorry_assets\card08.png
-		\\Mac\Home\Desktop\sorry_assets\card10.png = \\Mac\Home\Desktop\sorry_assets\card10.png
-		\\Mac\Home\Desktop\sorry_assets\card11.png = \\Mac\Home\Desktop\sorry_assets\card11.png
-		\\Mac\Home\Desktop\sorry_assets\card12.png = \\Mac\Home\Desktop\sorry_assets\card12.png
-		\\Mac\Home\Desktop\sorry_assets\cardSorry.png = \\Mac\Home\Desktop\sorry_assets\cardSorry.png
-		\\Mac\Home\Desktop\sorry_assets\coard05.png = \\Mac\Home\Desktop\sorry_assets\coard05.png
-		\\Mac\Home\Desktop\sorry_assets\Deck.png = \\Mac\Home\Desktop\sorry_assets\Deck.png
-		\\Mac\Home\Desktop\sorry_assets\GameBoard.png = \\Mac\Home\Desktop\sorry_assets\GameBoard.png
-		\\Mac\Home\Desktop\sorry_assets\logo01.png = \\Mac\Home\Desktop\sorry_assets\logo01.png
-		\\Mac\Home\Desktop\sorry_assets\logo02.png = \\Mac\Home\Desktop\sorry_assets\logo02.png
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
