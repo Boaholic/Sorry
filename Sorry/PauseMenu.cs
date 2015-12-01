@@ -22,5 +22,19 @@ namespace Sorry
             this.Close();
         }
 
+        private void saveButton_Click(object sender, EventArgs e)
+        {
+            //add save game code here
+        }
+
+        private void quitButton_Click(object sender, EventArgs e)
+        {
+            //add quit game code here
+        }
+
+        private void endButton_Click(object sender, EventArgs e)
+        {
+            //add end game code here
+        }
     }
 }
