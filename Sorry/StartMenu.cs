@@ -37,5 +37,19 @@ namespace Sorry
         {
             this.Close();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            newNetwork form = new newNetwork();
+            form.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            LoadForm form = new LoadForm();
+            form.Show();
+        }
     }
 }

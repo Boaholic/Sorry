@@ -52,6 +52,30 @@
     <Compile Include="Display.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="JoinForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JoinForm.Designer.cs">
+      <DependentUpon>JoinForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoadForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoadForm.Designer.cs">
+      <DependentUpon>LoadForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NetHostForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NetHostForm.Designer.cs">
+      <DependentUpon>NetHostForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="newNetwork.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="newNetwork.Designer.cs">
+      <DependentUpon>newNetwork.cs</DependentUpon>
+    </Compile>
     <Compile Include="NewLocalForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,6 +97,18 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="SquareType.cs" />
+    <EmbeddedResource Include="JoinForm.resx">
+      <DependentUpon>JoinForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoadForm.resx">
+      <DependentUpon>LoadForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NetHostForm.resx">
+      <DependentUpon>NetHostForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="newNetwork.resx">
+      <DependentUpon>newNetwork.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NewLocalForm.resx">
       <DependentUpon>NewLocalForm.cs</DependentUpon>
     </EmbeddedResource>

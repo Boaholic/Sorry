@@ -116,6 +116,18 @@ namespace Sorry
             CardPicture.Size = new Size(deckPic.Width, deckPic.Height);
             CardPicture.Image = deckPic;
             this.Controls.Add(CardPicture);
+            
+            //Add a back button to return to the main menu.
+            //Technically it resets the Application
+
+            goBack = new Button();
+            goBack.Location = new System.Drawing.Point(10, 10);
+            goBack.Size = new System.Drawing.Size(50, 20);
+            goBack.Text = "Back";
+            this.goBack.Font = new System.Drawing.Font("Lucida Calligraphy", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.goBack.Click += new System.EventHandler(this.goBack_Click);
+            this.Controls.Add(goBack);
+
 
             // 
             // Board
@@ -192,6 +204,15 @@ namespace Sorry
             e.Cancel = true;
         }
 
+
+
+        private void goBack_Click(object sender, EventArgs e)
+        {
+            
+            Application.Restart();
+            
+        }
+
         private List<List<SquareButton>> BoardButtons;
         private Board baseBoard;
         private PictureBox BoardPicture;
@@ -201,6 +222,7 @@ namespace Sorry
         private Image BoardImage;
         private List<Image> pawnImages;
         private Dictionary<Card.VALUE,Image> CardImages;
+        private Button goBack;
 
 
 
