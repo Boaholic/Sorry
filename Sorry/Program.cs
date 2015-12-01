@@ -14,8 +14,7 @@ namespace Sorry
         [STAThread]
         static void Main() 
         {
-            var game = new Game();
-            game.GameBegin();
+            Application.Run(new StartMenu());
             
         }
     }

@@ -79,7 +79,7 @@ namespace Sorry
             this.SuspendLayout();
             int boardRight = 200, boardTop = 50;
 
-            BoardPicture = new Label();
+            BoardPicture = new PictureBox();
             BoardPicture.Location = new System.Drawing.Point(boardRight, boardTop);
             BoardPicture.Size = new System.Drawing.Size(200, 200);
             Image boardPic = Resources.GameBoard;
@@ -120,11 +120,11 @@ namespace Sorry
             // 
             // Board
             // 
-            BoardButtons = new List<List<Button>>();
+            BoardButtons = new List<List<SquareButton>>();
             int buttonSize = 31;
             for (int i = 0; i < baseBoard.board.Length; i++)
             {
-                BoardButtons.Add(new List<Button>());
+                BoardButtons.Add(new List<SquareButton>());
                 for (int j = 0; j < baseBoard.board[i].Length; j++)
                 {
 
@@ -149,14 +149,16 @@ namespace Sorry
                         buttonR = boardRight;
                         jrfactor = 1;
                     }
-                    BoardButtons[i].Add(new System.Windows.Forms.Button());
-                    BoardButtons[i][j].Location = new System.Drawing.Point(buttonR+jrfactor*j*32, buttonT+ jtfactor * j * buttonSize);
+                    BoardButtons[i].Add(new SquareButton());
+                    BoardButtons[i][j].Location = new System.Drawing.Point(buttonR+jrfactor*j*32-196, buttonT+ jtfactor * j * buttonSize-45);
                     BoardButtons[i][j].Name = "Square" + i;
                     BoardButtons[i][j].Size = new System.Drawing.Size(buttonSize, buttonSize);
                     BoardButtons[i][j].TabIndex = 0;
                     //Board[i].Text = "Square" + i;
                     BoardButtons[i][j].UseVisualStyleBackColor = true;
                     this.Controls.Add(BoardButtons[i][j]);
+                    BoardButtons[i][j].Parent = BoardPicture;
+                    BoardButtons[i][j].BackColor = Color.Transparent;
 
                 }
 
@@ -176,11 +178,23 @@ namespace Sorry
             Card toDisplay = deck.DrawCard();
             DisplayCard(toDisplay);
         }
+        /// <summary>
+        /// Overrides the X to close ALL forms including the hidden main application.
+        /// </summary>
+        /// <param name="e"></param>
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            Form[] forms = Application.OpenForms.Cast<Form>().ToArray();
+            foreach (Form thisForm in forms)
+            {
+                thisForm.Close();
+            }
+            e.Cancel = true;
+        }
 
-
-        private List<List<System.Windows.Forms.Button>> BoardButtons;
+        private List<List<SquareButton>> BoardButtons;
         private Board baseBoard;
-        private Label BoardPicture;
+        private PictureBox BoardPicture;
         private Label CardPicture;
         private Button DeckButton;
         private Game parentGame;
