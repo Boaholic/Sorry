@@ -32,6 +32,10 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -52,19 +56,19 @@
     <Compile Include="Display.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Game.cs" />
     <Compile Include="NewLocalForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="NewLocalForm.Designer.cs">
       <DependentUpon>NewLocalForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="StartMenu.cs">
+    <Compile Include="PauseMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="StartMenu.Designer.cs">
-      <DependentUpon>StartMenu.cs</DependentUpon>
+    <Compile Include="PauseMenu.Designer.cs">
+      <DependentUpon>PauseMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Game.cs" />
     <Compile Include="Pawn.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -73,11 +77,14 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="SquareType.cs" />
+    <Compile Include="StartMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StartMenu.Designer.cs">
+      <DependentUpon>StartMenu.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="NewLocalForm.resx">
       <DependentUpon>NewLocalForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="StartMenu.resx">
-      <DependentUpon>StartMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -89,6 +96,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="StartMenu.resx">
+      <DependentUpon>StartMenu.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -149,12 +159,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\logo02.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\GreenTexture.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\blueTexture.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
