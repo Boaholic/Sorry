@@ -29,7 +29,15 @@ namespace Sorry
 
         private void quitButton_Click(object sender, EventArgs e)
         {
-            //add quit game code here
+            DialogResult checkMessage = MessageBox.Show("Are you sure you want to quit the game?", "Are you sure?", MessageBoxButtons.YesNo);
+            if(checkMessage == DialogResult.Yes)
+            {
+                MessageBox.Show("Quitting!"); //replace with quitting code
+            }
+            else if (checkMessage == DialogResult.No)
+            {
+                //do nothing
+            }
         }
 
         private void endButton_Click(object sender, EventArgs e)
@@ -39,7 +47,7 @@ namespace Sorry
 
         private void resumeButton_Click(object sender, EventArgs e)
         {
-            //add resume game code here
+            this.Close();
         }
     }
 }
