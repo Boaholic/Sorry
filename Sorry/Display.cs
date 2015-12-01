@@ -100,6 +100,8 @@ namespace Sorry
             //
             PauseButton = new Button();
             PauseButton.Location = new System.Drawing.Point(75, 500);
+            PauseButton.Font = new System.Drawing.Font("Lucida Calligraphy", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            PauseButton.ForeColor = System.Drawing.Color.Black;
             PauseButton.Size = new Size(100, 50);
             PauseButton.Click += new EventHandler(PauseButton_Click);
             PauseButton.Text = "Pause";
@@ -203,7 +205,9 @@ namespace Sorry
 
         private void PauseButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Pausing!", "Pause Menu", MessageBoxButtons.OKCancel);
+            PauseMenu paused = new PauseMenu();
+            paused.Show();
+            //MessageBox.Show("Pausing!", "Pause Menu", MessageBoxButtons.OKCancel);
             //if (MessageBox.Show("Are you sure?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             //{
                 // user clicked yes

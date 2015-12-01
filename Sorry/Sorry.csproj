@@ -57,9 +57,17 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Game.cs" />
-    <Compile Include="NewLocalForm.cs" />
+    <Compile Include="NewLocalForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="NewLocalForm.Designer.cs">
       <DependentUpon>NewLocalForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PauseMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PauseMenu.Designer.cs">
+      <DependentUpon>PauseMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="Pawn.cs" />
     <Compile Include="Program.cs" />
