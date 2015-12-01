@@ -21,10 +21,26 @@ namespace Sorry
 
         private void InitializeComponent()
         {
+            this.ResumeButton = new System.Windows.Forms.Button();
             this.CancelButton = new System.Windows.Forms.Button();
             this.SaveButton = new System.Windows.Forms.Button();
             this.EndButton = new System.Windows.Forms.Button();
             this.QuitButton = new System.Windows.Forms.Button();
+            //
+            // Resume Button
+            //
+            this.ResumeButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.ResumeButton.BackColor = System.Drawing.Color.Transparent;
+            this.ResumeButton.Font = new System.Drawing.Font("Lucida Calligraphy", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ResumeButton.ForeColor = System.Drawing.Color.Black;
+            this.ResumeButton.Location = new System.Drawing.Point(200, 75);
+            this.ResumeButton.Name = "resumeButton";
+            this.ResumeButton.Size = new System.Drawing.Size(100, 50);
+            this.ResumeButton.TabIndex = 5;
+            this.ResumeButton.Visible = true;
+            this.ResumeButton.Text = "Resume Game";
+            this.ResumeButton.UseVisualStyleBackColor = false;
+            this.ResumeButton.Click += new System.EventHandler(this.resumeButton_Click);
             //
             // Cancel Button
             //
@@ -36,6 +52,7 @@ namespace Sorry
             this.CancelButton.Name = "cancelButton";
             this.CancelButton.Size = new System.Drawing.Size(100, 50);
             this.CancelButton.TabIndex = 2;
+            this.CancelButton.Visible = true;
             this.CancelButton.Text = "Cancel";
             this.CancelButton.UseVisualStyleBackColor = false;
             this.CancelButton.Click += new System.EventHandler(this.cancelButton_Click);
@@ -93,8 +110,10 @@ namespace Sorry
             this.Controls.Add(CancelButton);
             this.Controls.Add(SaveButton);
             this.Controls.Add(QuitButton);
+            this.Controls.Add(EndButton);
+            this.Controls.Add(ResumeButton);
         }
-
+        private System.Windows.Forms.Button ResumeButton;
         private System.Windows.Forms.Button CancelButton;
         private System.Windows.Forms.Button SaveButton;
         private System.Windows.Forms.Button QuitButton;

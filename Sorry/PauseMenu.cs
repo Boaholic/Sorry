@@ -36,5 +36,10 @@ namespace Sorry
         {
             //add end game code here
         }
+
+        private void resumeButton_Click(object sender, EventArgs e)
+        {
+            //add resume game code here
+        }
     }
 }
