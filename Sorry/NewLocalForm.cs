@@ -45,7 +45,6 @@ namespace Sorry
             var gameWindow = new Display();
             gameWindow.Show();
             
-           
         }
     }
 }

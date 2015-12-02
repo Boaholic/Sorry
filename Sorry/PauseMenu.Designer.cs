@@ -10,10 +10,16 @@ using System.Windows.Forms;
 
 namespace Sorry
 {
+    /// <summary>
+    /// 
+    /// </summary>
     partial class PauseMenu
     {
         private System.ComponentModel.IContainer components = null;
 
+        /// <summary>
+        /// 
+        /// </summary>
         protected override void Dispose(bool disposing)
         {
             base.Dispose(disposing);
