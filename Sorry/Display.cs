@@ -95,6 +95,16 @@ namespace Sorry
             DeckButton.Size = new Size(deckPic.Width, deckPic.Height);
             DeckButton.Image = deckPic;
             DeckButton.Click += new EventHandler(DeckButtonHit);
+            //
+            // PauseButton
+            //
+            PauseButton = new Button();
+            PauseButton.Location = new System.Drawing.Point(75, 500);
+            PauseButton.Font = new System.Drawing.Font("Lucida Calligraphy", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            PauseButton.ForeColor = System.Drawing.Color.Black;
+            PauseButton.Size = new Size(100, 50);
+            PauseButton.Click += new EventHandler(PauseButton_Click);
+            PauseButton.Text = "Pause";
             // 
             // GameDisplay
             // 
@@ -107,6 +117,7 @@ namespace Sorry
             this.ResumeLayout(false);
             this.Controls.Add(BoardPicture);
             this.Controls.Add(DeckButton);
+            this.Controls.Add(PauseButton);
             //
             // CardPicture
             // 
@@ -116,18 +127,6 @@ namespace Sorry
             CardPicture.Size = new Size(deckPic.Width, deckPic.Height);
             CardPicture.Image = deckPic;
             this.Controls.Add(CardPicture);
-            
-            //Add a back button to return to the main menu.
-            //Technically it resets the Application
-
-            goBack = new Button();
-            goBack.Location = new System.Drawing.Point(10, 10);
-            goBack.Size = new System.Drawing.Size(50, 20);
-            goBack.Text = "Back";
-            this.goBack.Font = new System.Drawing.Font("Lucida Calligraphy", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.goBack.Click += new System.EventHandler(this.goBack_Click);
-            this.Controls.Add(goBack);
-
 
             // 
             // Board
@@ -196,35 +195,37 @@ namespace Sorry
         /// <param name="e"></param>
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
-            if (e.CloseReason == CloseReason.UserClosing)
+            Form[] forms = Application.OpenForms.Cast<Form>().ToArray();
+            foreach (Form thisForm in forms)
             {
-                System.Diagnostics.Process.GetCurrentProcess().Kill();
+                thisForm.Close();
             }
-            
+            e.Cancel = true;
         }
 
-
-
-        private void goBack_Click(object sender, EventArgs e)
+        private void PauseButton_Click(object sender, EventArgs e)
         {
-            
-            Application.Restart();
-            
+            PauseMenu paused = new PauseMenu();
+            paused.Show();
+            //MessageBox.Show("Pausing!", "Pause Menu", MessageBoxButtons.OKCancel);
+            //if (MessageBox.Show("Are you sure?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            //{
+                // user clicked yes
+            //}
+            //else
+            //{
+                // user clicked no
+            //}
         }
-
         private List<List<SquareButton>> BoardButtons;
         private Board baseBoard;
         private PictureBox BoardPicture;
         private Label CardPicture;
         private Button DeckButton;
+        private Button PauseButton;
         private Game parentGame;
         private Image BoardImage;
         private List<Image> pawnImages;
         private Dictionary<Card.VALUE,Image> CardImages;
-        private Button goBack;
-
-
-
-
     }
 }
