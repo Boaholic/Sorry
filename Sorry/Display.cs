@@ -195,12 +195,7 @@ namespace Sorry
         /// <param name="e"></param>
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
-            Form[] forms = Application.OpenForms.Cast<Form>().ToArray();
-            foreach (Form thisForm in forms)
-            {
-                thisForm.Close();
-            }
-            e.Cancel = true;
+            System.Diagnostics.Process.GetCurrentProcess().Kill();
         }
 
         private void PauseButton_Click(object sender, EventArgs e)
