@@ -18,16 +18,23 @@ namespace Sorry
                 board[i][0] = SquareType.Normal;
                 if (i % 15 == 2) {
                     //generate the homeRun Sequence
-                    board[i] = new SquareType[7];
+                    board[i] = new SquareType[10];
                     board[i][0] = SquareType.Normal;
-                    for (int j = 1; j < 6; j++)
+                    for (int j = 1; j < 9; j++)
+                    {
                         board[i][j] = SquareType.HomeRun;
-                    board[i][6] = SquareType.Home;
+                        if (j > 5)
+                        {
+                            board[i][j] = SquareType.Home;
+                        }
+                            
+                    }
                 }
                 if (i % 15 == 4) {
-                    board[i] = new SquareType[2];
+                    board[i] = new SquareType[5];
                     board[i][0] = SquareType.Normal;
-                    board[i][1] = SquareType.Start;
+                    for (int j = 1; j < 5; j++)
+                        board[i][j] = SquareType.Start;
                 }
             }
 
