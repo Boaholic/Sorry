@@ -7,46 +7,33 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Sorry;
 
 namespace Sorry
 {
-    public partial class NewLocalForm : Form
+    public partial class newNetwork : Form
     {
-        public NewLocalForm()
+        public newNetwork()
         {
             InitializeComponent();
         }
 
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
 
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            int local;
-            
-            if(e.Equals("One"))
-            {
-                Console.Write("True");
-            }
-            
-        }
-        /// <summary>
-        /// This launches the game
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
-
             this.Hide();
-            var gameWindow = new Display();
-            gameWindow.Show();
-
-
-
+            NetHostForm form = new NetHostForm();
+            form.Show();
+        }
+        
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            JoinForm form = new JoinForm();
+            form.Show();
         }
 
         protected override void OnFormClosing(FormClosingEventArgs e)
@@ -63,6 +50,7 @@ namespace Sorry
 
         }
 
+    
 
 
     }
