@@ -24,16 +24,34 @@ namespace Sorry
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
             NetHostForm form = new NetHostForm();
             form.Show();
         }
         
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
             JoinForm form = new JoinForm();
             form.Show();
         }
+
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                Form[] forms = Application.OpenForms.Cast<Form>().ToArray();
+                foreach (Form thisForm in forms)
+                {
+                    thisForm.Close();
+                }
+                e.Cancel = true;
+            }
+
+        }
+
+    
+
+
     }
 }

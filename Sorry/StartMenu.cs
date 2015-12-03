@@ -27,6 +27,7 @@ namespace Sorry
             NewLocalForm form = new NewLocalForm();
             form.Show();
             
+
         }
         /// <summary>
         /// This closes the application

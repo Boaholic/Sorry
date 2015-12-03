@@ -19,9 +19,19 @@ namespace Sorry
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
             var gameWindow = new Display();
             gameWindow.Show();
+        }
+
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                System.Diagnostics.Process.GetCurrentProcess().Kill();
+            }
+
+
         }
     }
 }

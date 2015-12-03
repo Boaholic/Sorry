@@ -40,17 +40,17 @@ namespace Sorry
         /// <param name="e"></param>
         private void label7_Load(object sender, EventArgs e)
         {
-            
-           // var host = Dns.GetHostEntry(Dns.GetHostName());
-           // foreach (var ip in host.AddressList)
-           // {
-             //   if (ip.AddressFamily == AddressFamily.InterNetwork)
-              //  {
-              //      label7.Text = ip.ToString();
+
+            // var host = Dns.GetHostEntry(Dns.GetHostName());
+            // foreach (var ip in host.AddressList)
+            // {
+            //   if (ip.AddressFamily == AddressFamily.InterNetwork)
+            //  {
+            //      label7.Text = ip.ToString();
             //    }
-         //   }
-         //   throw new Exception("Local IP Address Not Found!");
-          }
+            //   }
+            //   throw new Exception("Local IP Address Not Found!");
+        }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
@@ -59,9 +59,20 @@ namespace Sorry
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
             var gameWindow = new Display();
             gameWindow.Show();
         }
+
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                System.Diagnostics.Process.GetCurrentProcess().Kill();
+
+            }
+
+        }
+
     }
 }

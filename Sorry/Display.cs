@@ -196,12 +196,11 @@ namespace Sorry
         /// <param name="e"></param>
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
-            Form[] forms = Application.OpenForms.Cast<Form>().ToArray();
-            foreach (Form thisForm in forms)
+            if (e.CloseReason == CloseReason.UserClosing)
             {
-                thisForm.Close();
+                System.Diagnostics.Process.GetCurrentProcess().Kill();
             }
-            e.Cancel = true;
+            
         }
 
 

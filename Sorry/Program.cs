@@ -14,7 +14,8 @@ namespace Sorry
         [STAThread]
         static void Main() 
         {
-            Application.Run(new StartMenu());
+            StartMenu start = new StartMenu();
+            Application.Run(start);
             
         }
     }
