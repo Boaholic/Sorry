@@ -38,6 +38,8 @@ namespace Sorry
         /// </summary>
         private void saveButton_Click(object sender, EventArgs e)
         {
+            String location = Application.StartupPath;
+            MessageBox.Show(location);
             //add save game code here
         }
 
@@ -65,10 +67,12 @@ namespace Sorry
             DialogResult checkMessage = MessageBox.Show("Are you sure you want to end the current game?", "Are you sure?", MessageBoxButtons.YesNo);
             if (checkMessage == DialogResult.Yes)
             {
-                gameWindow.Close();
-                this.Close();
-                StartMenu newGame = new StartMenu();
-                newGame.Show();
+                System.Diagnostics.Process.Start(Application.ExecutablePath);
+                Application.Exit();
+                //gameWindow.Close();
+                //this.Close();
+                //StartMenu newGame = new StartMenu();
+                //newGame.Show();
             }
             else if (checkMessage == DialogResult.No)
             {
