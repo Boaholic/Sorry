@@ -26,6 +26,8 @@ namespace Sorry
             this.Hide();
             NewLocalForm form = new NewLocalForm();
             form.Show();
+            
+
         }
         /// <summary>
         /// This closes the application
@@ -35,6 +37,20 @@ namespace Sorry
         private void button4_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            newNetwork form = new newNetwork();
+            form.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            LoadForm form = new LoadForm();
+            form.Show();
         }
     }
 }

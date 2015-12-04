@@ -57,12 +57,30 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Game.cs" />
+    <Compile Include="JoinForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JoinForm.Designer.cs" />
+    <Compile Include="LoadForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoadForm.Designer.cs">
+      <DependentUpon>LoadForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NetHostForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NetHostForm.Designer.cs" />
     <Compile Include="NewLocalForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="NewLocalForm.Designer.cs">
       <DependentUpon>NewLocalForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="newNetwork.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="newNetwork.Designer.cs" />
     <Compile Include="PauseMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +101,9 @@
     <Compile Include="StartMenu.Designer.cs">
       <DependentUpon>StartMenu.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="JoinForm.resx" />
+    <EmbeddedResource Include="LoadForm.resx" />
+    <EmbeddedResource Include="NetHostForm.resx" />
     <EmbeddedResource Include="NewLocalForm.resx">
       <DependentUpon>NewLocalForm.cs</DependentUpon>
     </EmbeddedResource>
