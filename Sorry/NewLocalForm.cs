@@ -45,8 +45,6 @@ namespace Sorry
             var gameWindow = new Display();
             gameWindow.Show();
 
-
-
         }
 
         protected override void OnFormClosing(FormClosingEventArgs e)

@@ -10,10 +10,16 @@ using System.Windows.Forms;
 
 namespace Sorry
 {
+    /// <summary>
+    /// 
+    /// </summary>
     partial class PauseMenu
     {
         private System.ComponentModel.IContainer components = null;
 
+        /// <summary>
+        /// 
+        /// </summary>
         protected override void Dispose(bool disposing)
         {
             base.Dispose(disposing);
@@ -33,10 +39,10 @@ namespace Sorry
             this.ResumeButton.BackColor = System.Drawing.Color.Transparent;
             this.ResumeButton.Font = new System.Drawing.Font("Lucida Calligraphy", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ResumeButton.ForeColor = System.Drawing.Color.Black;
-            this.ResumeButton.Location = new System.Drawing.Point(200, 75);
+            this.ResumeButton.Location = new System.Drawing.Point(65, 10);
             this.ResumeButton.Name = "resumeButton";
-            this.ResumeButton.Size = new System.Drawing.Size(100, 50);
-            this.ResumeButton.TabIndex = 5;
+            this.ResumeButton.Size = new System.Drawing.Size(170, 50);
+            this.ResumeButton.TabIndex = 1;
             this.ResumeButton.Visible = true;
             this.ResumeButton.Text = "Resume Game";
             this.ResumeButton.UseVisualStyleBackColor = false;
@@ -51,7 +57,7 @@ namespace Sorry
             this.CancelButton.Location = new System.Drawing.Point(200, 230);
             this.CancelButton.Name = "cancelButton";
             this.CancelButton.Size = new System.Drawing.Size(100, 50);
-            this.CancelButton.TabIndex = 2;
+            this.CancelButton.TabIndex = 5;
             this.CancelButton.Visible = true;
             this.CancelButton.Text = "Cancel";
             this.CancelButton.UseVisualStyleBackColor = false;
@@ -63,10 +69,10 @@ namespace Sorry
             this.SaveButton.BackColor = System.Drawing.Color.Transparent;
             this.SaveButton.Font = new System.Drawing.Font("Lucida Calligraphy", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SaveButton.ForeColor = System.Drawing.Color.Black;
-            this.SaveButton.Location = new System.Drawing.Point(75, 130);
+            this.SaveButton.Location = new System.Drawing.Point(65, 70);
             this.SaveButton.Name = "saveButton";
-            this.SaveButton.Size = new System.Drawing.Size(150, 50);
-            this.SaveButton.TabIndex = 1;
+            this.SaveButton.Size = new System.Drawing.Size(170, 50);
+            this.SaveButton.TabIndex = 2;
             this.SaveButton.Visible = true;
             this.SaveButton.Text = "Save Game";
             this.SaveButton.UseVisualStyleBackColor = false;
@@ -78,10 +84,10 @@ namespace Sorry
             this.QuitButton.BackColor = System.Drawing.Color.Transparent;
             this.QuitButton.Font = new System.Drawing.Font("Lucida Calligraphy", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.QuitButton.ForeColor = System.Drawing.Color.Black;
-            this.QuitButton.Location = new System.Drawing.Point(75, 70);
+            this.QuitButton.Location = new System.Drawing.Point(65, 190);
             this.QuitButton.Name = "quitButton";
-            this.QuitButton.Size = new System.Drawing.Size(150, 50);
-            this.QuitButton.TabIndex = 3;
+            this.QuitButton.Size = new System.Drawing.Size(170, 50);
+            this.QuitButton.TabIndex = 4;
             this.QuitButton.Visible = true;
             this.QuitButton.Text = "Quit Game";
             this.QuitButton.UseVisualStyleBackColor = false;
@@ -93,10 +99,10 @@ namespace Sorry
             this.EndButton.BackColor = System.Drawing.Color.Transparent;
             this.EndButton.Font = new System.Drawing.Font("Lucida Calligraphy", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EndButton.ForeColor = System.Drawing.Color.Black;
-            this.EndButton.Location = new System.Drawing.Point(75, 10);
+            this.EndButton.Location = new System.Drawing.Point(65, 130);
             this.EndButton.Name = "endButton";
-            this.EndButton.Size = new System.Drawing.Size(150, 50);
-            this.EndButton.TabIndex = 4;
+            this.EndButton.Size = new System.Drawing.Size(170, 50);
+            this.EndButton.TabIndex = 3;
             this.EndButton.Visible = true;
             this.EndButton.Text = "End Game";
             this.EndButton.UseVisualStyleBackColor = false;
@@ -104,10 +110,11 @@ namespace Sorry
             //
             // Pause Menu
             //
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            //this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            //this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(300, 300);
-            this.Controls.Add(CancelButton);
+            //this.Controls.Add(CancelButton);
             this.Controls.Add(SaveButton);
             this.Controls.Add(QuitButton);
             this.Controls.Add(EndButton);
