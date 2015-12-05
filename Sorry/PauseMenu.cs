@@ -34,13 +34,40 @@ namespace Sorry
         }
 
         /// <summary>
-        /// 
+        /// Saves the game to a .txt file.
+        /// If the game is already saved, it adds to the current file
         /// </summary>
         private void saveButton_Click(object sender, EventArgs e)
         {
-            String location = Application.StartupPath;
-            MessageBox.Show(location);
-            //add save game code here
+            //String location = Application.StartupPath;
+            //String filename = "save.txt";
+            //String pathString = System.IO.Path.Combine(location, filename);
+            ////MessageBox.Show(pathString);
+            //if (!System.IO.File.Exists(pathString))
+            //{
+            //    System.IO.File.Create(pathString).Dispose();
+            //    System.IO.TextWriter tw = new System.IO.StreamWriter(pathString);
+            //    tw.WriteLine("saving the game");
+            //    tw.Close();
+            //    MessageBox.Show("Saved the game to " + pathString);
+            //}
+            ////else if (System.IO.File.Exists(pathString))
+            ////{
+            ////    System.IO.TextWriter tw = new System.IO.StreamWriter(pathString);
+            ////    tw.WriteLine("saving the game again!");
+            ////    tw.Close();
+            ////}
+            SaveGame saveMenu = new SaveGame(gameWindow);
+            saveMenu.Show();
+
+        }
+
+        /// <summary>
+        /// Saves the current game to the file specified
+        /// </summary>
+        private void saveGame(System.IO.TextWriter tw)
+        {
+
         }
 
         /// <summary>
