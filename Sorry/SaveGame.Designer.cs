@@ -26,6 +26,7 @@ namespace Sorry
             this.saveButtonTwo = new System.Windows.Forms.Button();
             this.saveButtonThree = new System.Windows.Forms.Button();
             this.saveButtonFour = new System.Windows.Forms.Button();
+            this.cancelButton = new System.Windows.Forms.Button();
 
             //
             // Save Button One
@@ -34,9 +35,9 @@ namespace Sorry
             this.saveButtonOne.BackColor = System.Drawing.Color.Transparent;
             this.saveButtonOne.Font = new System.Drawing.Font("Lucida Calligraphy", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.saveButtonOne.ForeColor = System.Drawing.Color.Black;
-            this.saveButtonOne.Location = new System.Drawing.Point(25, 25);
+            this.saveButtonOne.Location = new System.Drawing.Point(20, 20);
             this.saveButtonOne.Name = "saveButtonOne";
-            this.saveButtonOne.Size = new System.Drawing.Size(100, 50);
+            this.saveButtonOne.Size = new System.Drawing.Size(150, 50);
             this.saveButtonOne.TabIndex = 2;
             this.saveButtonOne.Visible = true;
             this.saveButtonOne.Text = "Save Slot 1";
@@ -50,9 +51,9 @@ namespace Sorry
             this.saveButtonTwo.BackColor = System.Drawing.Color.Transparent;
             this.saveButtonTwo.Font = new System.Drawing.Font("Lucida Calligraphy", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.saveButtonTwo.ForeColor = System.Drawing.Color.Black;
-            this.saveButtonTwo.Location = new System.Drawing.Point(75, 25);
+            this.saveButtonTwo.Location = new System.Drawing.Point(170, 20);
             this.saveButtonTwo.Name = "saveButtonTwo";
-            this.saveButtonTwo.Size = new System.Drawing.Size(100, 50);
+            this.saveButtonTwo.Size = new System.Drawing.Size(150, 50);
             this.saveButtonTwo.TabIndex = 3;
             this.saveButtonTwo.Visible = true;
             this.saveButtonTwo.Text = "Save Slot 2";
@@ -66,9 +67,9 @@ namespace Sorry
             this.saveButtonThree.BackColor = System.Drawing.Color.Transparent;
             this.saveButtonThree.Font = new System.Drawing.Font("Lucida Calligraphy", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.saveButtonThree.ForeColor = System.Drawing.Color.Black;
-            this.saveButtonThree.Location = new System.Drawing.Point(25, 125);
+            this.saveButtonThree.Location = new System.Drawing.Point(20, 70);
             this.saveButtonThree.Name = "saveButtonThree";
-            this.saveButtonThree.Size = new System.Drawing.Size(100, 50);
+            this.saveButtonThree.Size = new System.Drawing.Size(150, 50);
             this.saveButtonThree.TabIndex = 4;
             this.saveButtonThree.Visible = true;
             this.saveButtonThree.Text = "Save Slot 3";
@@ -82,9 +83,9 @@ namespace Sorry
             this.saveButtonFour.BackColor = System.Drawing.Color.Transparent;
             this.saveButtonFour.Font = new System.Drawing.Font("Lucida Calligraphy", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.saveButtonFour.ForeColor = System.Drawing.Color.Black;
-            this.saveButtonFour.Location = new System.Drawing.Point(75, 125);
+            this.saveButtonFour.Location = new System.Drawing.Point(170, 70);
             this.saveButtonFour.Name = "saveButtonFour";
-            this.saveButtonFour.Size = new System.Drawing.Size(100, 50);
+            this.saveButtonFour.Size = new System.Drawing.Size(150, 50);
             this.saveButtonFour.TabIndex = 5;
             this.saveButtonFour.Visible = true;
             this.saveButtonFour.Text = "Save Slot 4";
@@ -92,21 +93,39 @@ namespace Sorry
             this.saveButtonFour.Click += new System.EventHandler(this.saveButtonFour_Click);
 
             //
+            // Cancel Button
+            //
+            this.cancelButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cancelButton.BackColor = System.Drawing.Color.Transparent;
+            this.cancelButton.Font = new System.Drawing.Font("Lucida Calligraphy", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cancelButton.ForeColor = System.Drawing.Color.Black;
+            this.cancelButton.Location = new System.Drawing.Point(95, 120);
+            this.cancelButton.Name = "cancelButton";
+            this.cancelButton.Size = new System.Drawing.Size(150, 50);
+            this.cancelButton.TabIndex = 1;
+            this.cancelButton.Visible = true;
+            this.cancelButton.Text = "Cancel";
+            this.cancelButton.UseVisualStyleBackColor = false;
+            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
+
+            //
             // Save Menu
             //
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             //this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             //this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(200, 200);
+            this.ClientSize = new System.Drawing.Size(340, 200);
             this.Controls.Add(saveButtonOne);
             this.Controls.Add(saveButtonTwo);
             this.Controls.Add(saveButtonThree);
             this.Controls.Add(saveButtonFour);
+            this.Controls.Add(cancelButton);
         }
 
         private System.Windows.Forms.Button saveButtonOne;
         private System.Windows.Forms.Button saveButtonTwo;
         private System.Windows.Forms.Button saveButtonThree;
         private System.Windows.Forms.Button saveButtonFour;
+        private System.Windows.Forms.Button cancelButton;
     }
 }
