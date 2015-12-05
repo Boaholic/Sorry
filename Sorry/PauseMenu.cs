@@ -39,7 +39,25 @@ namespace Sorry
         private void saveButton_Click(object sender, EventArgs e)
         {
             String location = Application.StartupPath;
-            MessageBox.Show(location);
+            String filename = "save.txt";
+            String pathString = System.IO.Path.Combine(location, filename);
+            //MessageBox.Show(pathString);
+            if (!System.IO.File.Exists(pathString))
+            {
+                System.IO.File.Create(pathString).Dispose();
+                System.IO.TextWriter tw = new System.IO.StreamWriter(pathString);
+                tw.WriteLine("saving the game");
+                tw.Close();
+                MessageBox.Show("Saved the game to " + pathString);
+            }
+            //else if (System.IO.File.Exists(pathString))
+            //{
+            //    System.IO.TextWriter tw = new System.IO.StreamWriter(pathString);
+            //    tw.WriteLine("saving the game again!");
+            //    tw.Close();
+            //}
+
+              
             //add save game code here
         }
 
