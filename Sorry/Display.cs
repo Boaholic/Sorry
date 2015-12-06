@@ -15,8 +15,9 @@ namespace Sorry
     /// </summary>
     public class Display: Form
     {
-        public Display()
+        public Display(Game game)
         {
+            parentGame = game;
             baseBoard = new Board();
             InitializeCardImageMap();
             InitializeComponent();
@@ -27,7 +28,11 @@ namespace Sorry
         /// Renders the Current Game to the Board
         /// </summary>
         public void Render() {
-            
+            foreach(var row in BoardButtons) {
+                foreach (var b in row) {
+                    b.UpdateBackgroundImage();
+                }
+            }
         }
         /// <summary>
         /// Renders the card given on the UI
@@ -177,7 +182,7 @@ namespace Sorry
                     this.Controls.Add(BoardButtons[i][j]);
                     BoardButtons[i][j].Parent = BoardPicture;
                     BoardButtons[i][j].BackColor = Color.Transparent;
-                    BoardButtons[i][j].Click += new EventHandler(SquareButton_Clicks);
+                    BoardButtons[i][j].Click += new EventHandler(parentGame.SquareButtonPressed);
                     BoardButtons[i][j].UpdateBackgroundImage();
                     if (j == 8)
                     {
@@ -212,8 +217,7 @@ namespace Sorry
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void DeckButtonHit(object sender, EventArgs e) {
-            Deck deck = new Deck();
-            Card toDisplay = deck.DrawCard();
+            Card toDisplay = parentGame.CardButtonPressed();
             DisplayCard(toDisplay);
         }
         /// <summary>
@@ -238,11 +242,6 @@ namespace Sorry
             //{
                 // user clicked no
             //}
-        }
-
-        private void SquareButton_Clicks(object sender, EventArgs e)
-        {
-            ((SquareButton)sender).BackgroundImage = null;
         }
 
         private List<List<SquareButton>> BoardButtons;

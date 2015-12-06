@@ -33,7 +33,7 @@ namespace Sorry
                     board[i].Add(new Square(SquareType.Start));
                     pawns.Add(new List<Pawn>());
                     int temp = i / 15;
-                    pawns[temp].Add(new Pawn(i, 1, i / 15));
+                    pawns[temp].Add(new Pawn(i, 1, temp));
                     board[i][1].SetOccupied(pawns[temp][0]);
                 }
             }

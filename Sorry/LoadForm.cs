@@ -20,8 +20,8 @@ namespace Sorry
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
-            var gameWindow = new Display();
-            gameWindow.Show();
+            var game = new Game();
+            game.GameBegin();
         }
 
         protected override void OnFormClosing(FormClosingEventArgs e)
