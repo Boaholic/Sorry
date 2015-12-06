@@ -8,11 +8,17 @@ namespace Sorry
 {
     public class Pawn
     {
+        public Pawn(int x,int y,int owner) {
+            boardLocationX = x;
+            boardLocationY = y;
+            ownerPlayer = owner;
+        }
+
         private int boardLocationX { get; set; }
 
         private int boardLocationY { get; set; }
 
-        private int ownerPlayer { get; set; }
+        public int ownerPlayer { get; set; }
 
 
         public void setBoardLocation(int x, int y)
