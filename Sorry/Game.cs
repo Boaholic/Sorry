@@ -8,27 +8,47 @@ using System.Windows.Forms;
 namespace Sorry
 {
     //Rules and game functionality
-    class Game
+    public class Game
     {
         public void GameBegin() {
             //Load Start menu
             //Application.Run(Something_neat);
             //get user settings & set variables
             //start game
-            Application.Run(new Display());
+            board = new Board();
+            deck = new Deck();
+            currentPlayerTurn = 0;
+            panel = new Display(this);
+            panel.Show();
             //game loop
-                //take move
-                //check rules
-                //check for end came condition
+            //take move
+            //check rules
+            //check for end came condition
         }
         public void PauseGame() { }
         public void SaveGame() { }
         public void QuitGame() { }
         private void GameWon() { }
         
-        public void SquareButtonPressed() { }
-        public void CardButtonPressed() { }
-        protected void ChangeTurn(int playerId) { }
+        public void SquareButtonPressed(object sender, EventArgs e)
+        {
+            
+        }
+        public Card CardButtonPressed()
+        {
+            if (prevCard == null) {
+                prevCard = deck.DrawCard();
+            }
+            return prevCard;
+        }
+
+        /// <summary>
+        /// Move on to the next Players Turn, and allow the user to pick a new card.
+        /// </summary>
+        protected void ChangeTurn() {
+            prevCard = null;
+            currentPlayerTurn = (currentPlayerTurn + 1) % 4;
+        }
 
         protected Board board;
         protected Deck deck;
