@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Sorry.Properties;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -12,20 +13,43 @@ namespace Sorry
     {
         private int boardLocationX { get; set; }
         private int boardLocationY { get; set; }
-        private Image displayImage { get; set; }
+        public Square parentSquare;
 
-        private Game game;
-
-        public SquareButton() :base()
+        public SquareButton(Square pS) :base()
         {
             Visible = true;
+            parentSquare = pS;
             //BackColor = Color.Transparent;
         }
-          
 
-        public void buttonPressed()
+
+        /// <summary>
+        /// Upadte the BackGround Image to be what the parent square is
+        /// whether it contains a pawn or not
+        /// </summary>
+        public void  UpdateBackgroundImage()
         {
-            //game.SquareButtonPressed();
+
+            if (parentSquare.IsOccupied() != null)
+            {
+                switch (parentSquare.IsOccupied().ownerPlayer)
+                {
+                    case 0:
+                        BackgroundImage = Resources.pawnRed;
+                        break;
+                    case 1:
+                        BackgroundImage = Resources.pawnBlue;
+                        break;
+                    case 2:
+                        BackgroundImage = Resources.pawnYellow;
+                        break;
+                    case 3:
+                        BackgroundImage = Resources.pawnGreen;
+                        break;
+                }
+            }
+            else
+                BackgroundImage = null;
         }
     }
 }

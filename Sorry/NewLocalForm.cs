@@ -42,9 +42,8 @@ namespace Sorry
         {
 
             this.Hide();
-            var gameWindow = new Display();
-            gameWindow.Show();
-
+            var game = new Game();
+            game.GameBegin();
         }
 
         protected override void OnFormClosing(FormClosingEventArgs e)

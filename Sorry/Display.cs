@@ -15,8 +15,9 @@ namespace Sorry
     /// </summary>
     public class Display: Form
     {
-        public Display()
+        public Display(Game game)
         {
+            parentGame = game;
             baseBoard = new Board();
             InitializeCardImageMap();
             InitializeComponent();
@@ -27,7 +28,11 @@ namespace Sorry
         /// Renders the Current Game to the Board
         /// </summary>
         public void Render() {
-            
+            foreach(var row in BoardButtons) {
+                foreach (var b in row) {
+                    b.UpdateBackgroundImage();
+                }
+            }
         }
         /// <summary>
         /// Renders the card given on the UI
@@ -134,40 +139,40 @@ namespace Sorry
             // 
             BoardButtons = new List<List<SquareButton>>();
             int buttonSize = 31;
-            for (int i = 0; i < baseBoard.board.Length; i++)
+            for (int i = 0; i < baseBoard.board.Count; i++)
             {
                 int xAdjust = 0;
                 int yAdjust = 0;
                 BoardButtons.Add(new List<SquareButton>());
-                for (int j = 0; j < baseBoard.board[i].Length; j++)
+                for (int j = 0; j < baseBoard.board[i].Count; j++)
                 {
 
                     int buttonT = boardTop, buttonR = boardRight,jrfactor=0,jtfactor=0;
-                    if (baseBoard.board.Length / 4 > i) {   //top line, Red
+                    if (baseBoard.board.Count / 4 > i) {   //top line, Red
                         buttonR=boardRight + i * buttonSize;
                         buttonT = boardTop;
                         jtfactor = 1;
                         xAdjust = 31;
                     }
-                    else if (baseBoard.board.Length / 2 > i) { //right line, blue
-                        buttonR = boardRight + (baseBoard.board.Length / 4 * buttonSize);
+                    else if (baseBoard.board.Count / 2 > i) { //right line, blue
+                        buttonR = boardRight + (baseBoard.board.Count / 4 * buttonSize);
                         buttonT = boardTop + i % 15 * buttonSize;
                         jrfactor = -1;
                         yAdjust = 31;
                     }
-                    else if (baseBoard.board.Length * 3 / 4 > i) { //bottom line, yellow
-                        buttonR=boardRight + ((baseBoard.board.Length / 4) - i % 15) * buttonSize;
-                        buttonT=boardTop + baseBoard.board.Length / 4 * buttonSize;
+                    else if (baseBoard.board.Count * 3 / 4 > i) { //bottom line, yellow
+                        buttonR=boardRight + ((baseBoard.board.Count / 4) - i % 15) * buttonSize;
+                        buttonT=boardTop + baseBoard.board.Count / 4 * buttonSize;
                         jtfactor = -1;
                         xAdjust = 31;
                     }
                     else {  //left line, green
-                        buttonT = boardTop + ((baseBoard.board.Length / 4) - i % 15) * buttonSize;
+                        buttonT = boardTop + ((baseBoard.board.Count / 4) - i % 15) * buttonSize;
                         buttonR = boardRight;
                         jrfactor = 1;
                         yAdjust = 31;
                     }
-                    BoardButtons[i].Add(new SquareButton());
+                    BoardButtons[i].Add(new SquareButton(baseBoard.board[i][j]));
                     BoardButtons[i][j].Location = new System.Drawing.Point(buttonR+jrfactor*j*32-196, buttonT+ jtfactor * j * buttonSize-45);
                     BoardButtons[i][j].Name = "Square" + i;
                     BoardButtons[i][j].Size = new System.Drawing.Size(buttonSize, buttonSize);
@@ -177,8 +182,9 @@ namespace Sorry
                     this.Controls.Add(BoardButtons[i][j]);
                     BoardButtons[i][j].Parent = BoardPicture;
                     BoardButtons[i][j].BackColor = Color.Transparent;
-
-                    if(j == 8)
+                    BoardButtons[i][j].Click += new EventHandler(parentGame.SquareButtonPressed);
+                    BoardButtons[i][j].UpdateBackgroundImage();
+                    if (j == 8)
                     {
                         BoardButtons[i][j].Location = new System.Drawing.Point(buttonR + jrfactor * 7 * 32 - 196 - xAdjust, buttonT + jtfactor * 7 * buttonSize - 45 - yAdjust);
                     }
@@ -188,12 +194,12 @@ namespace Sorry
                         BoardButtons[i][j].Location = new System.Drawing.Point(buttonR + jrfactor * 7 * 32 - 196 + xAdjust, buttonT + jtfactor * 7 * buttonSize - 45 + yAdjust);
                     }
 
-                    if (baseBoard.board[i][j] == SquareType.Start && j == 3 )
+                    if (baseBoard.board[i][j].type == SquareType.Start && j == 3 )
                     {
                         BoardButtons[i][j].Location = new System.Drawing.Point(buttonR + jrfactor * 2 * 32 - 196 - xAdjust, buttonT + jtfactor * 2 * buttonSize - 45 - yAdjust);
                     }
 
-                    if (baseBoard.board[i][j] == SquareType.Start && j == 4)
+                    if (baseBoard.board[i][j].type == SquareType.Start && j == 4)
                     {
                         BoardButtons[i][j].Location = new System.Drawing.Point(buttonR + jrfactor * 2 * 32 - 196 + xAdjust, buttonT + jtfactor * 2 * buttonSize - 45 + yAdjust);
                     }
@@ -211,8 +217,7 @@ namespace Sorry
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void DeckButtonHit(object sender, EventArgs e) {
-            Deck deck = new Deck();
-            Card toDisplay = deck.DrawCard();
+            Card toDisplay = parentGame.CardButtonPressed();
             DisplayCard(toDisplay);
         }
         /// <summary>
@@ -238,6 +243,7 @@ namespace Sorry
                 // user clicked no
             //}
         }
+
         private List<List<SquareButton>> BoardButtons;
         private Board baseBoard;
         private PictureBox BoardPicture;

@@ -5,6 +5,12 @@ namespace Sorry
 {
     public class Square
     {
+        public Square(SquareType startType)
+        {
+            type = startType;
+
+        }
+        public SquareType type;
         // Returns true if there is a pawn already in the square
         private bool occupied;
         // Stores which pawn is in the square
