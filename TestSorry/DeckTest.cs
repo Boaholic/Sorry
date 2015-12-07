@@ -16,6 +16,8 @@ namespace TestSorry
         {
             Deck testDeck = new Deck();
             testDeck.CreateDeck();
+            testDeck.DrawCard();
+            testDeck.Shuffle();
             Assert.IsNotNull(testDeck);
         }
 

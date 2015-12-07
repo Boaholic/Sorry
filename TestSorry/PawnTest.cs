@@ -14,6 +14,10 @@ namespace Tests
         public void PawnTest()
         {
             Pawn testPawn = new Pawn();
+            testPawn.setBoardLocation(1,1);
+            testPawn.ownerPlayer();
+            testPawn.boardLocationX();
+            testPawn.boardLocationY();
         }
     }
 }

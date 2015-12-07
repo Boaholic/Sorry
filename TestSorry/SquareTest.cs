@@ -15,6 +15,8 @@ namespace TestSorry
         public void SquareTest()
         {
             Square testSquare = new Square();
+            testSquare.IsOccupied();
+            //testSquare.SetOccupied();
         }
 
     }
