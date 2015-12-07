@@ -93,6 +93,45 @@
             this.loadButtonOne.BackColor = System.Drawing.Color.Transparent;
             this.loadButtonOne.ForeColor = System.Drawing.Color.Black;
             this.loadButtonOne.UseVisualStyleBackColor = true;
+            //
+            // Load Button Two
+            //
+            this.loadButtonTwo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.loadButtonTwo.Font = new System.Drawing.Font("Lucida Calligraphy", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loadButtonTwo.Location = new System.Drawing.Point(0, 0);
+            this.loadButtonTwo.Name = "loadButtonOne";
+            this.loadButtonTwo.Size = new System.Drawing.Size(100, 50);
+            this.loadButtonTwo.TabIndex = 2;
+            this.loadButtonTwo.Visible = true;
+            this.loadButtonTwo.BackColor = System.Drawing.Color.Transparent;
+            this.loadButtonTwo.ForeColor = System.Drawing.Color.Black;
+            this.loadButtonTwo.UseVisualStyleBackColor = true;
+            //
+            // Load Button Three
+            //
+            this.loadButtonThree.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.loadButtonThree.Font = new System.Drawing.Font("Lucida Calligraphy", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loadButtonThree.Location = new System.Drawing.Point(0, 0);
+            this.loadButtonThree.Name = "loadButtonOne";
+            this.loadButtonThree.Size = new System.Drawing.Size(100, 50);
+            this.loadButtonThree.TabIndex = 2;
+            this.loadButtonThree.Visible = true;
+            this.loadButtonThree.BackColor = System.Drawing.Color.Transparent;
+            this.loadButtonThree.ForeColor = System.Drawing.Color.Black;
+            this.loadButtonThree.UseVisualStyleBackColor = true;
+            //
+            // Load Button Four
+            //
+            this.loadButtonFour.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.loadButtonFour.Font = new System.Drawing.Font("Lucida Calligraphy", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loadButtonFour.Location = new System.Drawing.Point(0, 0);
+            this.loadButtonFour.Name = "loadButtonOne";
+            this.loadButtonFour.Size = new System.Drawing.Size(100, 50);
+            this.loadButtonFour.TabIndex = 2;
+            this.loadButtonFour.Visible = true;
+            this.loadButtonFour.BackColor = System.Drawing.Color.Transparent;
+            this.loadButtonFour.ForeColor = System.Drawing.Color.Black;
+            this.loadButtonFour.UseVisualStyleBackColor = true;
 
             // 
             // LoadForm
