@@ -17,11 +17,12 @@ namespace Sorry
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+
+        private void backButton_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            var game = new Game();
-            game.GameBegin();
+            this.Close();
+            System.Diagnostics.Process.Start(Application.ExecutablePath);
+            Application.Exit();
         }
 
         protected override void OnFormClosing(FormClosingEventArgs e)
