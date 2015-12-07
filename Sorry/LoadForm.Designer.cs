@@ -32,6 +32,10 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.listBox1 = new System.Windows.Forms.ListBox();
+            this.loadButtonOne = new System.Windows.Forms.Button();
+            this.loadButtonTwo = new System.Windows.Forms.Button();
+            this.loadButtonThree = new System.Windows.Forms.Button();
+            this.loadButtonFour = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -76,6 +80,20 @@
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(313, 148);
             this.listBox1.TabIndex = 0;
+            //
+            // Load Button One
+            //
+            this.loadButtonOne.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.loadButtonOne.Font = new System.Drawing.Font("Lucida Calligraphy", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loadButtonOne.Location = new System.Drawing.Point(0, 0);
+            this.loadButtonOne.Name = "loadButtonOne";
+            this.loadButtonOne.Size = new System.Drawing.Size(100, 50);
+            this.loadButtonOne.TabIndex = 2;
+            this.loadButtonOne.Visible = true;
+            this.loadButtonOne.BackColor = System.Drawing.Color.Transparent;
+            this.loadButtonOne.ForeColor = System.Drawing.Color.Black;
+            this.loadButtonOne.UseVisualStyleBackColor = true;
+
             // 
             // LoadForm
             // 
@@ -98,5 +116,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button loadButtonOne;
+        private System.Windows.Forms.Button loadButtonTwo;
+        private System.Windows.Forms.Button loadButtonThree;
+        private System.Windows.Forms.Button loadButtonFour;
     }
 }
