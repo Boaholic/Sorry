@@ -32,6 +32,10 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -46,19 +50,68 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Board.cs" />
     <Compile Include="Card.cs" />
     <Compile Include="Deck.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="Display.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Game.cs" />
+    <Compile Include="JoinForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JoinForm.Designer.cs" />
+    <Compile Include="LoadForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoadForm.Designer.cs">
+      <DependentUpon>LoadForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NetHostForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NetHostForm.Designer.cs" />
+    <Compile Include="NewLocalForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewLocalForm.Designer.cs">
+      <DependentUpon>NewLocalForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="newNetwork.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="newNetwork.Designer.cs" />
+    <Compile Include="PauseMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PauseMenu.Designer.cs">
+      <DependentUpon>PauseMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="Pawn.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="SaveGame.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SaveGame.Designer.cs">
+      <DependentUpon>SaveGame.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Square.cs" />
+    <Compile Include="SquareButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SquareType.cs" />
+    <Compile Include="StartMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StartMenu.Designer.cs">
+      <DependentUpon>StartMenu.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="JoinForm.resx" />
+    <EmbeddedResource Include="LoadForm.resx" />
+    <EmbeddedResource Include="NetHostForm.resx" />
+    <EmbeddedResource Include="NewLocalForm.resx">
+      <DependentUpon>NewLocalForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -68,7 +121,11 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="StartMenu.resx">
+      <DependentUpon>StartMenu.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -81,6 +138,66 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\GameBoard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Deck.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CardOne.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\card01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\card02.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\card03.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\card04.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\card07.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\card08.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\card10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\card11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\card12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\cardSorry.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\card05.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\logo01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\logo02.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\pawnBlue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\pawnGreen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\pawnRed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\pawnYellow.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

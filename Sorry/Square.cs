@@ -1,9 +1,16 @@
 ﻿using System;
+using System.Drawing;
 
 namespace Sorry
 {
     public class Square
     {
+        public Square(SquareType startType)
+        {
+            type = startType;
+
+        }
+        public SquareType type;
         // Returns true if there is a pawn already in the square
         private bool occupied;
         // Stores which pawn is in the square
@@ -11,7 +18,7 @@ namespace Sorry
         // Shows if the square belongs to a player i.e "Home Spaces"
         private int ownerPlayer;
         // Lights up the square if it is a valid move
-        private color highlighted;
+        private Color highlighted;
         public Square()
         {
 

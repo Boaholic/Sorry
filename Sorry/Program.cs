@@ -14,10 +14,8 @@ namespace Sorry
         [STAThread]
         static void Main() 
         {
-            // Application.EnableVisualStyles();
-            //Application.SetCompatibleTextRenderingDefault(false);
-            // Application.Run(new Form1());
-            
+            StartMenu start = new StartMenu();
+            Application.Run(start);
             
         }
     }
