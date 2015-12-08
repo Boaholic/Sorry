@@ -18,7 +18,7 @@ namespace Sorry
             board = new Board();
             deck = new Deck();
             currentPlayerTurn = 0;
-            panel = new Display(this);
+            panel = new Display(this, 0);
             panel.Show();
             //game loop
             //take move
