@@ -27,6 +27,7 @@ namespace Sorry
             {
                 System.IO.File.Create(pathString).Dispose();
                 System.IO.TextWriter tw = new System.IO.StreamWriter(pathString);
+                tw.WriteLine(gameDisplay.parentGame.gameTheme);
                 foreach (List<SquareButton> listofButtons in gameDisplay.BoardButtons)
                 {
                     foreach(SquareButton button in listofButtons)
@@ -34,7 +35,6 @@ namespace Sorry
                         tw.WriteLine(button.occupiedBy);
                     }
                 }
-                tw.WriteLine("saving game 1");
                 tw.Close();
                 MessageBox.Show("Saved the game to " + pathString);
             }
@@ -44,6 +44,7 @@ namespace Sorry
                 if (checkMessage == DialogResult.Yes)
                 {
                     System.IO.TextWriter tw = new System.IO.StreamWriter(pathString);
+                    tw.WriteLine(gameDisplay.parentGame.gameTheme);
                     foreach (List<SquareButton> listofButtons in gameDisplay.BoardButtons)
                     {
                         foreach (SquareButton button in listofButtons)
@@ -72,6 +73,7 @@ namespace Sorry
             {
                 System.IO.File.Create(pathString).Dispose();
                 System.IO.TextWriter tw = new System.IO.StreamWriter(pathString);
+                tw.WriteLine(gameDisplay.parentGame.gameTheme);
                 foreach (List<SquareButton> listofButtons in gameDisplay.BoardButtons)
                 {
                     foreach (SquareButton button in listofButtons)
@@ -88,6 +90,7 @@ namespace Sorry
                 if (checkMessage == DialogResult.Yes)
                 {
                     System.IO.TextWriter tw = new System.IO.StreamWriter(pathString);
+                    tw.WriteLine(gameDisplay.parentGame.gameTheme);
                     foreach (List<SquareButton> listofButtons in gameDisplay.BoardButtons)
                     {
                         foreach (SquareButton button in listofButtons)
@@ -115,6 +118,7 @@ namespace Sorry
             {
                 System.IO.File.Create(pathString).Dispose();
                 System.IO.TextWriter tw = new System.IO.StreamWriter(pathString);
+                tw.WriteLine(gameDisplay.parentGame.gameTheme);
                 foreach (List<SquareButton> listofButtons in gameDisplay.BoardButtons)
                 {
                     foreach (SquareButton button in listofButtons)
@@ -131,6 +135,7 @@ namespace Sorry
                 if (checkMessage == DialogResult.Yes)
                 {
                     System.IO.TextWriter tw = new System.IO.StreamWriter(pathString);
+                    tw.WriteLine(gameDisplay.parentGame.gameTheme);
                     foreach (List<SquareButton> listofButtons in gameDisplay.BoardButtons)
                     {
                         foreach (SquareButton button in listofButtons)
@@ -158,6 +163,7 @@ namespace Sorry
             {
                 System.IO.File.Create(pathString).Dispose();
                 System.IO.TextWriter tw = new System.IO.StreamWriter(pathString);
+                tw.WriteLine(gameDisplay.parentGame.gameTheme);
                 foreach (List<SquareButton> listofButtons in gameDisplay.BoardButtons)
                 {
                     foreach (SquareButton button in listofButtons)
@@ -174,6 +180,7 @@ namespace Sorry
                 if (checkMessage == DialogResult.Yes)
                 {
                     System.IO.TextWriter tw = new System.IO.StreamWriter(pathString);
+                    tw.WriteLine(gameDisplay.parentGame.gameTheme);
                     foreach (List<SquareButton> listofButtons in gameDisplay.BoardButtons)
                     {
                         foreach (SquareButton button in listofButtons)

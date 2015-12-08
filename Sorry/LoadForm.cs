@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace Sorry
 {
     public partial class LoadForm : Form
@@ -33,9 +34,11 @@ namespace Sorry
             //MessageBox.Show(pathString);
             if (System.IO.File.Exists(pathString))
             {
+                System.IO.StreamReader sw = new System.IO.StreamReader(pathString);
+                int newTheme = int.Parse(sw.ReadLine());
                 MessageBox.Show("Game successfully loaded from " + pathString);
                 this.Hide();
-                var game = new Game();
+                var game = new Game(newTheme);
                 game.GameBegin();
             }
             else
@@ -52,9 +55,11 @@ namespace Sorry
             //MessageBox.Show(pathString);
             if (System.IO.File.Exists(pathString))
             {
+                System.IO.StreamReader sw = new System.IO.StreamReader(pathString);
+                int newTheme = int.Parse(sw.ReadLine());
                 MessageBox.Show("Game successfully loaded from " + pathString);
                 this.Hide();
-                var game = new Game();
+                var game = new Game(newTheme);
                 game.GameBegin();
             }
             else
@@ -73,7 +78,9 @@ namespace Sorry
             {
                 MessageBox.Show("Game successfully loaded from " + pathString);
                 this.Hide();
-                var game = new Game();
+                System.IO.StreamReader sw = new System.IO.StreamReader(pathString);
+                int newTheme = int.Parse(sw.ReadLine());
+                var game = new Game(newTheme);
                 game.GameBegin();
             }
             else
@@ -90,9 +97,11 @@ namespace Sorry
             //MessageBox.Show(pathString);
             if (System.IO.File.Exists(pathString))
             {
+                System.IO.StreamReader sw = new System.IO.StreamReader(pathString);
+                int newTheme = int.Parse(sw.ReadLine());
                 MessageBox.Show("Game successfully loaded from " + pathString);
                 this.Hide();
-                var game = new Game();
+                var game = new Game(newTheme);
                 game.GameBegin();
             }
             else
