@@ -27,6 +27,13 @@ namespace Sorry
             {
                 System.IO.File.Create(pathString).Dispose();
                 System.IO.TextWriter tw = new System.IO.StreamWriter(pathString);
+                foreach (List<SquareButton> listofButtons in gameDisplay.BoardButtons)
+                {
+                    foreach(SquareButton button in listofButtons)
+                    {
+                        tw.WriteLine(button.occupiedBy);
+                    }
+                }
                 tw.WriteLine("saving game 1");
                 tw.Close();
                 MessageBox.Show("Saved the game to " + pathString);
@@ -37,7 +44,13 @@ namespace Sorry
                 if (checkMessage == DialogResult.Yes)
                 {
                     System.IO.TextWriter tw = new System.IO.StreamWriter(pathString);
-                    tw.WriteLine("saving the game again!");
+                    foreach (List<SquareButton> listofButtons in gameDisplay.BoardButtons)
+                    {
+                        foreach (SquareButton button in listofButtons)
+                        {
+                            tw.WriteLine(button.occupiedBy);
+                        }
+                    }
                     tw.Close();
                     MessageBox.Show("Saved the game to " + pathString);
                 }
@@ -59,7 +72,13 @@ namespace Sorry
             {
                 System.IO.File.Create(pathString).Dispose();
                 System.IO.TextWriter tw = new System.IO.StreamWriter(pathString);
-                tw.WriteLine("saving game 2");
+                foreach (List<SquareButton> listofButtons in gameDisplay.BoardButtons)
+                {
+                    foreach (SquareButton button in listofButtons)
+                    {
+                        tw.WriteLine(button.occupiedBy);
+                    }
+                }
                 tw.Close();
                 MessageBox.Show("Saved the game to " + pathString);
             }
@@ -69,7 +88,13 @@ namespace Sorry
                 if (checkMessage == DialogResult.Yes)
                 {
                     System.IO.TextWriter tw = new System.IO.StreamWriter(pathString);
-                    tw.WriteLine("saving the game again!");
+                    foreach (List<SquareButton> listofButtons in gameDisplay.BoardButtons)
+                    {
+                        foreach (SquareButton button in listofButtons)
+                        {
+                            tw.WriteLine(button.occupiedBy);
+                        }
+                    }
                     tw.Close();
                     MessageBox.Show("Saved the game to " + pathString);
                 }
@@ -90,7 +115,13 @@ namespace Sorry
             {
                 System.IO.File.Create(pathString).Dispose();
                 System.IO.TextWriter tw = new System.IO.StreamWriter(pathString);
-                tw.WriteLine("saving game 1");
+                foreach (List<SquareButton> listofButtons in gameDisplay.BoardButtons)
+                {
+                    foreach (SquareButton button in listofButtons)
+                    {
+                        tw.WriteLine(button.occupiedBy);
+                    }
+                }
                 tw.Close();
                 MessageBox.Show("Saved the game to " + pathString);
             }
@@ -100,7 +131,13 @@ namespace Sorry
                 if (checkMessage == DialogResult.Yes)
                 {
                     System.IO.TextWriter tw = new System.IO.StreamWriter(pathString);
-                    tw.WriteLine("saving the game again!");
+                    foreach (List<SquareButton> listofButtons in gameDisplay.BoardButtons)
+                    {
+                        foreach (SquareButton button in listofButtons)
+                        {
+                            tw.WriteLine(button.occupiedBy);
+                        }
+                    }
                     tw.Close();
                     MessageBox.Show("Saved the game to " + pathString);
                 }
@@ -121,7 +158,13 @@ namespace Sorry
             {
                 System.IO.File.Create(pathString).Dispose();
                 System.IO.TextWriter tw = new System.IO.StreamWriter(pathString);
-                tw.WriteLine("saving game 1");
+                foreach (List<SquareButton> listofButtons in gameDisplay.BoardButtons)
+                {
+                    foreach (SquareButton button in listofButtons)
+                    {
+                        tw.WriteLine(button.occupiedBy);
+                    }
+                }
                 tw.Close();
                 MessageBox.Show("Saved the game to " + pathString);
             }
@@ -131,7 +174,13 @@ namespace Sorry
                 if (checkMessage == DialogResult.Yes)
                 {
                     System.IO.TextWriter tw = new System.IO.StreamWriter(pathString);
-                    tw.WriteLine("saving the game again!");
+                    foreach (List<SquareButton> listofButtons in gameDisplay.BoardButtons)
+                    {
+                        foreach (SquareButton button in listofButtons)
+                        {
+                            tw.WriteLine(button.occupiedBy);
+                        }
+                    }
                     tw.Close();
                     MessageBox.Show("Saved the game to " + pathString);
                 }

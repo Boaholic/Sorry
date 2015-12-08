@@ -244,7 +244,7 @@ namespace Sorry
             //}
         }
 
-        private List<List<SquareButton>> BoardButtons;
+        public List<List<SquareButton>> BoardButtons;
         private Board baseBoard;
         private PictureBox BoardPicture;
         private Label CardPicture;
