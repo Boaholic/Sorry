@@ -34,6 +34,9 @@ namespace Sorry
             if (System.IO.File.Exists(pathString))
             {
                 MessageBox.Show("Game successfully loaded from " + pathString);
+                this.Hide();
+                var game = new Game();
+                game.GameBegin();
             }
             else
             {
@@ -50,6 +53,9 @@ namespace Sorry
             if (System.IO.File.Exists(pathString))
             {
                 MessageBox.Show("Game successfully loaded from " + pathString);
+                this.Hide();
+                var game = new Game();
+                game.GameBegin();
             }
             else
             {
@@ -66,6 +72,9 @@ namespace Sorry
             if (System.IO.File.Exists(pathString))
             {
                 MessageBox.Show("Game successfully loaded from " + pathString);
+                this.Hide();
+                var game = new Game();
+                game.GameBegin();
             }
             else
             {
@@ -82,6 +91,9 @@ namespace Sorry
             if (System.IO.File.Exists(pathString))
             {
                 MessageBox.Show("Game successfully loaded from " + pathString);
+                this.Hide();
+                var game = new Game();
+                game.GameBegin();
             }
             else
             {
