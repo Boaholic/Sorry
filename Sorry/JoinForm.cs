@@ -20,7 +20,7 @@ namespace Sorry
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
-            var game = new Game();
+            var game = new Game(0);
             game.GameBegin();
         }
 

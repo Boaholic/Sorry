@@ -199,26 +199,23 @@
   <ItemGroup>
     <None Include="Assets\pawnYellow.png" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <None Include="Assets\zombie\pawnYellow.png" />
-    <None Include="Assets\zombie\pawnRed.png" />
-    <None Include="Assets\zombie\pawnGreen.png" />
-    <None Include="Assets\zombie\pawnBlue.png" />
-    <None Include="Assets\zombie\card12.png" />
-    <None Include="Assets\zombie\card11.png" />
-    <None Include="Assets\zombie\card10.png" />
-    <None Include="Assets\zombie\card08.png" />
-    <None Include="Assets\zombie\card07.png" />
-    <None Include="Assets\zombie\card05.png" />
-    <None Include="Assets\zombie\card04.png" />
-    <None Include="Assets\zombie\card03.png" />
-    <None Include="Assets\zombie\card02.png" />
-    <None Include="Assets\zombie\card01.png" />
-    <Content Include="Assets\zombie\Deck.png" />
-    <Content Include="Assets\zombie\GameBoard.png" />
-    <Content Include="Assets\zombie\logo01Zombie.png" />
-    <Content Include="Assets\zombie\logo02.png" />
+    <None Include="Resources\zDeck.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zGameBoard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zlogo01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zlogo02.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CLDeck.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CLGameBoard.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
