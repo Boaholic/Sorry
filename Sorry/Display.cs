@@ -265,7 +265,7 @@ namespace Sorry
         private Label CardPicture;
         private Button DeckButton;
         private Button PauseButton;
-        private Game parentGame;
+        public Game parentGame;
         private Image BoardImage;
         private List<Image> pawnImages;
         private Dictionary<Card.VALUE,Image> CardImages;
