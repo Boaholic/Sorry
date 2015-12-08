@@ -114,6 +114,7 @@ namespace Sorry
             //this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             //this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(300, 300);
+            this.Text = "Pause";
             //this.Controls.Add(CancelButton);
             this.Controls.Add(SaveButton);
             this.Controls.Add(QuitButton);

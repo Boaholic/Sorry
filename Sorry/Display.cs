@@ -15,13 +15,12 @@ namespace Sorry
     /// </summary>
     public class Display: Form
     {
-        public Display(Game game)
+        public Display(Game game, int theme)
         {
             parentGame = game;
             baseBoard = new Board();
             InitializeCardImageMap();
-            InitializeComponent();
-            
+            InitializeComponent(theme);
         }
 
         /// <summary>
@@ -55,7 +54,6 @@ namespace Sorry
             CardImages.Add(Card.VALUE.ELEVEN, Resources.card11);
             CardImages.Add(Card.VALUE.TWELVE, Resources.card12);
             CardImages.Add(Card.VALUE.SORRY, Resources.cardSorry);
-
         }
 
         /// <summary>
@@ -80,7 +78,7 @@ namespace Sorry
         /// <summary>
         /// Initializes the compents of the Display
         /// </summary>
-        private void InitializeComponent()
+        private void InitializeComponent(int theme)
         {
             this.SuspendLayout();
             int boardRight = 200, boardTop = 50;
@@ -88,7 +86,18 @@ namespace Sorry
             BoardPicture = new PictureBox();
             BoardPicture.Location = new System.Drawing.Point(boardRight, boardTop);
             BoardPicture.Size = new System.Drawing.Size(200, 200);
-            Image boardPic = Resources.GameBoard;
+            Image boardPic;
+            if (theme == 1)
+            {
+                boardPic = Resources.zGameBoard;
+            } else if (theme == 2)
+            {
+                boardPic = Resources.CLGameBoard;
+            }
+            else
+            {
+                boardPic = Resources.GameBoard;
+            }
             BoardPicture.Size = new Size(boardPic.Width, boardPic.Height);
             BoardPicture.Image = boardPic;
             //
@@ -98,6 +107,12 @@ namespace Sorry
             DeckButton.Location = new System.Drawing.Point(50, 50);
             DeckButton.Size = new System.Drawing.Size(200, 200);
             Image deckPic = Resources.Deck;
+            if (theme == 1)
+            {
+                deckPic = Resources.zDeck;
+            } else if (theme == 2){
+                deckPic = Resources.CLDeck;
+            }
             DeckButton.Size = new Size(deckPic.Width, deckPic.Height);
             DeckButton.Image = deckPic;
             DeckButton.Click += new EventHandler(DeckButtonHit);
@@ -112,7 +127,7 @@ namespace Sorry
             PauseButton.Click += new EventHandler(PauseButton_Click);
             PauseButton.Text = "Pause";
 
-            //
+            // 
             // PassButton
             //
             PassButton = new Button();
@@ -256,7 +271,7 @@ namespace Sorry
             //}
         }
 
-        private List<List<SquareButton>> BoardButtons;
+        public List<List<SquareButton>> BoardButtons;
         private Board baseBoard;
         private PictureBox BoardPicture;
         private Label CardPicture;
