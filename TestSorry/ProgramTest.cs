@@ -10,6 +10,8 @@ namespace Tests
     [TestClass()]
     public class ProgramTests
     {
+        //Run Constructor
+        //Check Functions
         [TestMethod()]
         public void ProgramTest()
         {

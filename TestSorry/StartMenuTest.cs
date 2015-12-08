@@ -9,20 +9,18 @@ using Sorry;
 namespace TestSorry
 {
     [TestClass()]
-    public class SquareTests
+    public class StartMenuTests
     {
         //Run Constructor
         //Check Functions
         [TestMethod()]
-        public void SquareTest()
+        public void StartMenuTest()
         {
-            Square testSquare = new Square();
-            testSquare.IsOccupied();
-            testSquare.occupied();
-            testSquare.occupiedBy();
-            testSquare.ownerPlayer();
-            testSquare.highlighted();
-            testSquare.SetOccupied();
+            StartMenu testStartMenu = new StartMenu();
+            testStartMenu.button1_Click();
+            testStartMenu.button2_Click();
+            testStartMenu.button3_Click();
+            testStartMenu.button4_Click();
         }
 
     }

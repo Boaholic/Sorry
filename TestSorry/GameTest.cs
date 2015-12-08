@@ -10,10 +10,19 @@ namespace Tests
     [TestClass()]
     public class GameTests
     {
+        //Run Constructor
+        //Check Functions
         [TestMethod()]
         public void GameTest()
         {
             Game testGame = new Game();
+            testGame.PauseGame();
+            testGame.SaveGame();
+            testGame.QuitGame();
+            testGame.GameWon();
+            testGame.SquareButtonPressed();
+            testGame.CardButtonPressed();
+            testGame.ChangeTur();
         }
     }
 }

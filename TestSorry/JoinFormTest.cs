@@ -4,22 +4,23 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Sorry;
 
-namespace Tests
+namespace TestSorry
 {
+    //
     [TestClass()]
-    public class PawnTests
+    public class JoinFormTests
     {
         //Run Constructor
         //Check Functions
         [TestMethod()]
-        public void PawnTest()
+        public void JoinFormTest()
         {
-            Pawn testPawn = new Pawn();
-            testPawn.setBoardLocation(1,1);
-            testPawn.ownerPlayer();
-            testPawn.boardLocationX();
-            testPawn.boardLocationY();
+            JoinForm testJoinForm = new JoinForm();
+            testJoinForm.button1_Click();
+            testJoinForm.OnFormClosing();
         }
+
     }
 }

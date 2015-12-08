@@ -10,10 +10,13 @@ namespace Tests
     [TestClass()]
     public class BoardTests
     {
+        //Run Constructor
+        //Check Functions
         [TestMethod()]
         public void BoardTest()
         {
             Board testBoard = new Board();
+            testBoard.ValidateDistance();
             Assert.IsNotNull(testBoard);
         }
     }

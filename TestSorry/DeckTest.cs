@@ -11,6 +11,8 @@ namespace TestSorry
     [TestClass()]
     public class DeckTest
     {
+        //Run Constructor
+        //Check Functions
         [TestMethod()]
         public void testDeck()
         {

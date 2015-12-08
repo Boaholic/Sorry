@@ -10,6 +10,8 @@ namespace Tests
     [TestClass()]
     public class GameDisplayTests
     {
+        //Run Constructor
+        //Check Functions
         [TestMethod()]
         public void GameDisplayTest()
         {
