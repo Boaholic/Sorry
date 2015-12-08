@@ -16,11 +16,20 @@ namespace Sorry
         public NewLocalForm()
         {
             InitializeComponent();
+            boardchoice = 0;
         }
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
-
+            boardchoice = 0;
+        }
+        private void radioButton3_CheckedChanged(object sender, EventArgs e)
+        {
+            boardchoice = 1;
+        }
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            boardchoice = 2;
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -42,7 +51,7 @@ namespace Sorry
         {
 
             this.Hide();
-            var game = new Game();
+            var game = new Game(boardchoice);
             game.GameBegin();
         }
 
@@ -60,7 +69,7 @@ namespace Sorry
 
         }
 
-
+        private int boardchoice;
 
     }
 }
