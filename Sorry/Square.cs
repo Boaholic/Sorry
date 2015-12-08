@@ -8,7 +8,7 @@ namespace Sorry
         public Square(SquareType startType)
         {
             type = startType;
-
+            ownerPlayer = 0;
         }
         public SquareType type;
         // Returns true if there is a pawn already in the square
@@ -21,7 +21,7 @@ namespace Sorry
         private Color highlighted;
         public Square()
         {
-
+            ownerPlayer = 0;
         }
         //This may need to be changed. If we want it to return a bool 
         //of occupied instead of returning the pawn it is occupied by
