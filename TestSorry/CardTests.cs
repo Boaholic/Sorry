@@ -10,6 +10,8 @@ namespace Tests
     [TestClass()]
     public class CardTests
     {
+        //Run Constructor
+        //Check Functions
         [TestMethod()]
         public void CardValTest()
         {
