@@ -25,6 +25,70 @@ namespace Sorry
             Application.Exit();
         }
 
+        private void loadOne_Click(object sender, EventArgs e)
+        {
+            String location = Application.StartupPath;
+            String filename = "save1.txt";
+            String pathString = System.IO.Path.Combine(location, filename);
+            //MessageBox.Show(pathString);
+            if (System.IO.File.Exists(pathString))
+            {
+                MessageBox.Show("Game successfully loaded from " + pathString);
+            }
+            else
+            {
+                MessageBox.Show("No save file exists in " + pathString);
+            }
+        }
+
+        private void loadTwo_Click(object sender, EventArgs e)
+        {
+            String location = Application.StartupPath;
+            String filename = "save2.txt";
+            String pathString = System.IO.Path.Combine(location, filename);
+            //MessageBox.Show(pathString);
+            if (System.IO.File.Exists(pathString))
+            {
+                MessageBox.Show("Game successfully loaded from " + pathString);
+            }
+            else
+            {
+                MessageBox.Show("No save file exists in " + pathString);
+            }
+        }
+
+        private void loadThree_Click(object sender, EventArgs e)
+        {
+            String location = Application.StartupPath;
+            String filename = "save3.txt";
+            String pathString = System.IO.Path.Combine(location, filename);
+            //MessageBox.Show(pathString);
+            if (System.IO.File.Exists(pathString))
+            {
+                MessageBox.Show("Game successfully loaded from " + pathString);
+            }
+            else
+            {
+                MessageBox.Show("No save file exists in " + pathString);
+            }
+        }
+
+        private void loadFour_Click(object sender, EventArgs e)
+        {
+            String location = Application.StartupPath;
+            String filename = "save4.txt";
+            String pathString = System.IO.Path.Combine(location, filename);
+            //MessageBox.Show(pathString);
+            if (System.IO.File.Exists(pathString))
+            {
+                MessageBox.Show("Game successfully loaded from " + pathString);
+            }
+            else
+            {
+                MessageBox.Show("No save file exists in " + pathString);
+            }
+        }
+
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
             if (e.CloseReason == CloseReason.UserClosing)

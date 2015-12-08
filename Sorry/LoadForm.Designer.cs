@@ -87,6 +87,7 @@
             this.loadButtonOne.BackColor = System.Drawing.Color.Transparent;
             this.loadButtonOne.ForeColor = System.Drawing.Color.Black;
             this.loadButtonOne.UseVisualStyleBackColor = true;
+            this.loadButtonOne.Click += new System.EventHandler(loadOne_Click);
             //
             // Load Button Two
             //
@@ -101,6 +102,7 @@
             this.loadButtonTwo.BackColor = System.Drawing.Color.Transparent;
             this.loadButtonTwo.ForeColor = System.Drawing.Color.Black;
             this.loadButtonTwo.UseVisualStyleBackColor = true;
+            this.loadButtonTwo.Click += new System.EventHandler(loadTwo_Click);
             //
             // Load Button Three
             //
@@ -115,6 +117,7 @@
             this.loadButtonThree.BackColor = System.Drawing.Color.Transparent;
             this.loadButtonThree.ForeColor = System.Drawing.Color.Black;
             this.loadButtonThree.UseVisualStyleBackColor = true;
+            this.loadButtonThree.Click += new System.EventHandler(loadThree_Click);
             //
             // Load Button Four
             //
@@ -129,7 +132,7 @@
             this.loadButtonFour.BackColor = System.Drawing.Color.Transparent;
             this.loadButtonFour.ForeColor = System.Drawing.Color.Black;
             this.loadButtonFour.UseVisualStyleBackColor = true;
-
+            this.loadButtonFour.Click += new System.EventHandler(loadFour_Click);
             // 
             // LoadForm
             // 
