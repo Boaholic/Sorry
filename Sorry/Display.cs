@@ -21,7 +21,6 @@ namespace Sorry
             baseBoard = new Board();
             InitializeCardImageMap();
             InitializeComponent(theme);
-            
         }
 
         /// <summary>
@@ -91,6 +90,9 @@ namespace Sorry
             if (theme == 1)
             {
                 boardPic = Resources.zGameBoard;
+            } else if (theme == 2)
+            {
+                boardPic = Resources.CLGameBoard;
             }
             else
             {
@@ -108,6 +110,8 @@ namespace Sorry
             if (theme == 1)
             {
                 deckPic = Resources.zDeck;
+            } else if (theme == 2){
+                deckPic = Resources.CLDeck;
             }
             DeckButton.Size = new Size(deckPic.Width, deckPic.Height);
             DeckButton.Image = deckPic;

@@ -10,6 +10,11 @@ namespace Sorry
     //Rules and game functionality
     public class Game
     {
+        public Game(int theme)
+        {
+            setTheme(theme);
+        }
+        public int gameTheme;
         public void GameBegin() {
             //Load Start menu
             //Application.Run(Something_neat);
@@ -18,12 +23,20 @@ namespace Sorry
             board = new Board();
             deck = new Deck();
             currentPlayerTurn = 0;
-            panel = new Display(this, 0);
+            panel = new Display(this, getTheme());
             panel.Show();
             //game loop
             //take move
             //check rules
             //check for end came condition
+        }
+        public void setTheme(int t)
+        {
+            gameTheme = t;
+        }
+        public int getTheme()
+        {
+            return gameTheme;
         }
         public void PauseGame() { }
         public void SaveGame() { }
