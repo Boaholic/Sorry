@@ -111,6 +111,17 @@ namespace Sorry
             PauseButton.Size = new Size(100, 50);
             PauseButton.Click += new EventHandler(PauseButton_Click);
             PauseButton.Text = "Pause";
+
+            //
+            // PassButton
+            //
+            PassButton = new Button();
+            PassButton.Location = new System.Drawing.Point(75, 250);
+            PassButton.Font = new System.Drawing.Font("Lucida Calligraphy", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            PassButton.ForeColor = System.Drawing.Color.Black;
+            PassButton.Size = new Size(100, 50);
+            PassButton.Click += new EventHandler(parentGame.PassPressed);
+            PassButton.Text = "Pass";
             // 
             // GameDisplay
             // 
@@ -124,6 +135,7 @@ namespace Sorry
             this.Controls.Add(BoardPicture);
             this.Controls.Add(DeckButton);
             this.Controls.Add(PauseButton);
+            this.Controls.Add(PassButton);
             //
             // CardPicture
             // 
@@ -250,6 +262,7 @@ namespace Sorry
         private Label CardPicture;
         private Button DeckButton;
         private Button PauseButton;
+        private Button PassButton;
         private Game parentGame;
         private Image BoardImage;
         private List<Image> pawnImages;
