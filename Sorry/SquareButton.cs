@@ -35,18 +35,18 @@ namespace Sorry
 
             if (parentSquare.IsOccupied() != null)
             {
-                switch (occupiedBy)
+                switch (parentSquare.IsOccupied().ownerPlayer)
                 {
-                    case 1:
+                    case 0:
                         BackgroundImage = Resources.pawnRed;
                         break;
-                    case 2:
+                    case 1:
                         BackgroundImage = Resources.pawnBlue;
                         break;
-                    case 3:
+                    case 2:
                         BackgroundImage = Resources.pawnYellow;
                         break;
-                    case 4:
+                    case 3:
                         BackgroundImage = Resources.pawnGreen;
                         break;
                 }

@@ -45,14 +45,73 @@ namespace Sorry
         
         public void SquareButtonPressed(object sender, EventArgs e)
         {
-            
+            var curSquareButton = (SquareButton)sender;
+            var squarePressed = curSquareButton.parentSquare;
+            if (prevCard == null)
+                return;
+
+            if (prevSquarePressed == null)
+            {
+                if (squarePressed.IsOccupied() != null && squarePressed.IsOccupied().ownerPlayer == currentPlayerTurn)
+                {
+                    prevSquarePressed = squarePressed;
+                }
+
+            }
+            else
+            {
+                //logic comes in to play
+
+                // we now need to validate the move
+                switch (prevCard.cardVal)
+                {
+                    case Card.VALUE.One:
+                        if (prevSquarePressed.type == SquareType.Start)
+                        {
+                            if (board.validateDistance(prevSquarePressed, squarePressed, 1)) {
+                                squarePressed.SetOccupied(prevSquarePressed.IsOccupied());
+                                prevSquarePressed.SetOccupied(null);
+                            }
+                        }
+                        break;
+                    case Card.VALUE.TWO:
+                        break;
+                    case Card.VALUE.THREE:
+                        break;
+                    case Card.VALUE.FOUR:
+                        break;
+                    case Card.VALUE.FIVE:
+                        break;
+                    case Card.VALUE.SEVEN:
+                        break;
+                    case Card.VALUE.EIGHT:
+                        break;
+                    case Card.VALUE.TEN:
+                        break;
+                    case Card.VALUE.ELEVEN:
+                        break;
+                    case Card.VALUE.TWELVE:
+                        break;
+                    case Card.VALUE.SORRY:
+                        break;
+                }
+            }
+            panel.Render();
         }
         public Card CardButtonPressed()
         {
+            //logic needs to go here to see if it is impossible for the player to move
+
+
             if (prevCard == null) {
                 prevCard = deck.DrawCard();
             }
             return prevCard;
+        }
+
+        public void PassPressed(object sender, EventArgs e)
+        {
+            ChangeTurn();
         }
 
         /// <summary>
@@ -61,6 +120,23 @@ namespace Sorry
         protected void ChangeTurn() {
             prevCard = null;
             currentPlayerTurn = (currentPlayerTurn + 1) % 4;
+            string playerName = "None";
+            switch (currentPlayerTurn) {
+                case 0:
+                    playerName = "Red";
+                    break;
+                case 1:
+                    playerName = "Blue";
+                    break;
+                case 2:
+                    playerName = "Yellow";
+                    break;
+                case 3:
+                    playerName = "Green";
+                    break;
+            }
+
+            MessageBox.Show("Player "+playerName+" Turn", "My Application", MessageBoxButtons.OKCancel, MessageBoxIcon.Asterisk);
         }
 
         protected Board board;
